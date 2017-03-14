@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='..\Style Sheet\CDA.xsl'?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xsi:schemaLocation="urn:hl7-org:v3 CDA_SDTC.xsd">
+	<realmCode code="US"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="2.16.840.1.113883.10.20.22.1.15"/>
+	<templateId root="2.16.840.1.113883.10.20.22.1.15" extension="2015-08-01"/>
+	<id root="fbb533a3-df25-48b2-8d97-3e7d40d8bf6a"/>
+	<code code="52521-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Overall Plan of Care/Advance Care Directives"/>
+	<title>Care Plan</title>
+	<effectiveTime value="20170307145707-0500"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
+	<languageCode code="en-US"/>
+	<recordTarget>
+		<patientRole>
+			<id root="~~ Georgia Medcaid OID HERE ~~" extension="999999999999"/>
+			<addr use="WP">
+				<state>Ohio</state>
+				<city>Cityville</city>
+				<postalCode>55555</postalCode>
+				<streetAddressLine>106 Place St.</streetAddressLine>
+			</addr>
+			<telecom value="1-999-999-9999" use="HP"/>
+			<patient>
+				<name>
+					<family>Doe</family>
+					<given>Jane</given>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.1.11.1" codeSystemName="AdministrativeGender"/>
+				<birthTime value="19850602000000"/>
+				<raceCode nullFlavor="UNK"/>
+				<ethnicGroupCode nullFlavor="UNK"/>
+				<languageCommunication>
+					<languageCode code="eng"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20170307145707-0500"/>
+		<assignedAuthor>
+			<id nullFlavor="UNK" root="2.16.840.1.113883.4.6"/>
+			<addr>
+				<state>OH</state>
+				<city>Dayton</city>
+				<postalCode>45402</postalCode>
+				<streetAddressLine>230 N Main St</streetAddressLine>
+			</addr>
+			<telecom value="1-111-111-1111 11111" use="WP"/>
+			<assignedAuthoringDevice>
+				<manufacturerModelName>CareSource</manufacturerModelName>
+				<softwareName>CareSource</softwareName>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id nullFlavor="UNK" root="2.16.840.1.113883.4.6"/>
+				<name>CareSource</name>
+				<telecom value="1-111-111-1111 11111" use="WP"/>
+				<addr>
+					<state>OH</state>
+					<city>Dayton</city>
+					<postalCode>45402</postalCode>
+					<streetAddressLine>230 N Main St</streetAddressLine>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<effectiveTime>
+				<low value="20170307145707-0500"/>
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<assignedEntity>
+					<id nullFlavor="NI"/>
+					<assignedPerson>
+						<name nullFlavor="NI"/>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.22.2.58"/>
+					<templateId root="2.16.840.1.113883.10.20.22.2.58" extension="2015-08-01"/>
+					<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concerns"/>
+					<title>Health Concerns</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>GUID</th>
+									<th>Description</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb</td>
+									<td>Risk for ineffective health maintenance due to complex health conditions</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>f659cf01-b53e-4b01-b8bf-1b0c575a6cf1</td>
+									<td>Behavior</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>32a54819-8754-430c-8857-a2c67c2ea1ad</td>
+									<td>Care Management</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>6998849c-c7a0-4870-a84e-080996da9392</td>
+									<td>ADL</td>
+									<td>2016-12-28</td>
+									<td>2017-06-26</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
+							<id extension="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb"/>
+							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
+							<statusCode code="active"/>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+									<id extension="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb"/>
+									<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+										<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20160810000000"/>
+										<high value="20170626000000"/>
+									</effectiveTime>
+									<value xsi:type="TN">Risk for ineffective health maintenance due to complex health conditions</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.80"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.80" extension="2015-08-01"/>
+									<code code="29308-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosis"/>
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+											<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+											<id extension="6dc4e251-0679-4554-bfd8-1e63d9e46965"/>
+											<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+												<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+											</code>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20160810000000"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="I69.354" codeSystem="ICD10" displayName="Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side"/>
+										</observation>
+									</entryRelationship>
+								</encounter>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.122" extension="2015-08-01"/>
+									<id root="08c90f58-90ee-442c-815d-d6f8b22c2df5"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
+							<id extension="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1"/>
+							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
+							<statusCode code="active"/>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+									<id extension="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1"/>
+									<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+										<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20160810000000"/>
+										<high value="20170626000000"/>
+									</effectiveTime>
+									<value xsi:type="TN">Behavior</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.80"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.80" extension="2015-08-01"/>
+									<code code="29308-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosis"/>
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+											<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+											<id extension="4cbf2c39-6c32-4a6c-a47d-a84afafeb265"/>
+											<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+												<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+											</code>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20160810000000"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="I69.354" codeSystem="ICD10" displayName="Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side"/>
+										</observation>
+									</entryRelationship>
+								</encounter>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.122" extension="2015-08-01"/>
+									<id root="b9ae8de4-3101-4b4c-b0a1-41103e6b470a"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
+							<id extension="32a54819-8754-430c-8857-a2c67c2ea1ad"/>
+							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
+							<statusCode code="active"/>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+									<id extension="32a54819-8754-430c-8857-a2c67c2ea1ad"/>
+									<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+										<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20160810000000"/>
+										<high value="20170626000000"/>
+									</effectiveTime>
+									<value xsi:type="TN">Care Management</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.80"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.80" extension="2015-08-01"/>
+									<code code="29308-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosis"/>
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+											<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+											<id extension="7fbd0d9e-fda4-4fd3-a49f-0e6e62ae0767"/>
+											<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+												<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+											</code>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20160810000000"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="I69.354" codeSystem="ICD10" displayName="Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side"/>
+										</observation>
+									</entryRelationship>
+								</encounter>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.122" extension="2015-08-01"/>
+									<id root="3ac5aa7a-90ab-4ee7-90e0-765dd6026f04"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
+							<id extension="6998849c-c7a0-4870-a84e-080996da9392"/>
+							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
+							<statusCode code="active"/>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+									<id extension="6998849c-c7a0-4870-a84e-080996da9392"/>
+									<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+										<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20161228000000"/>
+										<high value="20170626000000"/>
+									</effectiveTime>
+									<value xsi:type="TN">ADL</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.80"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.80" extension="2015-08-01"/>
+									<code code="29308-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosis"/>
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.22.4.4"/>
+											<templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+											<id extension="ee44db84-2de7-4b06-9b1a-e5790cf3e784"/>
+											<code code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem">
+												<translation code="55607006" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="SNOMED CT" displayName="Problem"/>
+											</code>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20161228000000"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="M62.81" codeSystem="ICD10" displayName="Muscle weakness (generalized)"/>
+										</observation>
+									</entryRelationship>
+								</encounter>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.122" extension="2015-08-01"/>
+									<id root="c32f82cb-d331-486b-a481-7420f549f4ca"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.22.2.60"/>
+					<code code="61146-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Goals"/>
+					<title>Goals</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>GUID</th>
+									<th>Problem GUID</th>
+									<th>Status</th>
+									<th>Description</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>08c90f58-90ee-442c-815d-d6f8b22c2df5</td>
+									<td>4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb</td>
+									<td>active</td>
+									<td>Member/caregiver knowledgeable in health maintenance and prevention strategies</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>b9ae8de4-3101-4b4c-b0a1-41103e6b470a</td>
+									<td>f659cf01-b53e-4b01-b8bf-1b0c575a6cf1</td>
+									<td>active</td>
+									<td>Identify and Eliminate underlying conditions or stressors that contribute to behavioral problems.</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>3ac5aa7a-90ab-4ee7-90e0-765dd6026f04</td>
+									<td>32a54819-8754-430c-8857-a2c67c2ea1ad</td>
+									<td>active</td>
+									<td>Member with Medium Medical, Behavioral, Social and/or Long Term Service and Support Needs will have ongoing Care Management Contact and Visits</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>c32f82cb-d331-486b-a481-7420f549f4ca</td>
+									<td>6998849c-c7a0-4870-a84e-080996da9392</td>
+									<td>active</td>
+									<td>Member will reverse functional loss resulting from a recent, acute, event or condition.</td>
+									<td>2016-12-28</td>
+									<td>2017-06-26</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="GOL">
+							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
+							<id extension="08c90f58-90ee-442c-815d-d6f8b22c2df5"/>
+							<code xsi:type="CE" nullFlavor="UNK"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<value xsi:type="TN">Member/caregiver knowledgeable in health maintenance and prevention strategies</value>
+							<author>
+								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+								<time value="20170307145707-0500"/>
+								<assignedAuthor>
+									<id nullFlavor="UNK"/>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="b9e62bf5-de50-4920-a776-c9927fe3c780"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="GOL">
+							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
+							<id extension="b9ae8de4-3101-4b4c-b0a1-41103e6b470a"/>
+							<code xsi:type="CE" nullFlavor="UNK"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<value xsi:type="TN">Identify and Eliminate underlying conditions or stressors that contribute to behavioral problems.</value>
+							<author>
+								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+								<time value="20170307145707-0500"/>
+								<assignedAuthor>
+									<id nullFlavor="UNK"/>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="892a84b7-d982-4615-882d-40ba89234167"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="e7cf8f59-a538-4d73-9a4d-de13e4b270d8"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="1ce9d9c6-3fd0-466c-bae5-4c5f11f587c7"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="GOL">
+							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
+							<id extension="3ac5aa7a-90ab-4ee7-90e0-765dd6026f04"/>
+							<code xsi:type="CE" nullFlavor="UNK"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<value xsi:type="TN">Member with Medium Medical, Behavioral, Social and/or Long Term Service and Support Needs will have ongoing Care Management Contact and Visits</value>
+							<author>
+								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+								<time value="20170307145707-0500"/>
+								<assignedAuthor>
+									<id nullFlavor="UNK"/>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="32a54819-8754-430c-8857-a2c67c2ea1ad"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="dd13c03b-80a0-4ef7-81a5-6930c7d62735"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="GOL">
+							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
+							<id extension="c32f82cb-d331-486b-a481-7420f549f4ca"/>
+							<code xsi:type="CE" nullFlavor="UNK"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20161228000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<value xsi:type="TN">Member will reverse functional loss resulting from a recent, acute, event or condition.</value>
+							<author>
+								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+								<time value="20170307145707-0500"/>
+								<assignedAuthor>
+									<id nullFlavor="UNK"/>
+								</assignedAuthor>
+							</author>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="6998849c-c7a0-4870-a84e-080996da9392"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="d81f4960-fecf-4c1e-a854-68c8b8ccd307"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="66342a2d-ca54-4b7b-a11b-58733983af46"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="68f3edd0-38ed-4152-8e02-c7072aa9935b"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.21.2.3" extension="2015-08-01"/>
+					<code code="62387-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Interventions"/>
+					<title>Interventions</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>GUID</th>
+									<th>Goal Guid</th>
+									<th>Status</th>
+									<th>Description</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>b9e62bf5-de50-4920-a776-c9927fe3c780</td>
+									<td>08c90f58-90ee-442c-815d-d6f8b22c2df5</td>
+									<td>completed</td>
+									<td>Case Manager facilitates and coordinates with obtaining appropriate care assistance</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>892a84b7-d982-4615-882d-40ba89234167</td>
+									<td>b9ae8de4-3101-4b4c-b0a1-41103e6b470a</td>
+									<td>active</td>
+									<td>CM will obtain a history of the member's troubling behaviors to include: the onset, duration and severity of the behaviors; the member's perception of the behaviors and the precipitating factors; the identified measures that have been found to mitigate the troubling behaviors.</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>e7cf8f59-a538-4d73-9a4d-de13e4b270d8</td>
+									<td>b9ae8de4-3101-4b4c-b0a1-41103e6b470a</td>
+									<td>completed</td>
+									<td>CM will obtain a history of the member's comorbidities, including new physical or behavioral health problems, or a flare-up of a known chronic condition that may be causing or aggravating a behavior symptom.</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>1ce9d9c6-3fd0-466c-bae5-4c5f11f587c7</td>
+									<td>b9ae8de4-3101-4b4c-b0a1-41103e6b470a</td>
+									<td>active</td>
+									<td>CM will preform a medication reconciliation.</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>dd13c03b-80a0-4ef7-81a5-6930c7d62735</td>
+									<td>3ac5aa7a-90ab-4ee7-90e0-765dd6026f04</td>
+									<td>active</td>
+									<td>CM/ICT/Waiver Service Coordinator will complete Face to Face visits with the Medium Risk member, per the following schedule: For months 0-2 there will be 1 visit. For months 3-6 there will be at least 2 visits with a maximum of 60 days between visits. For month 7 until the conclusion of the Demonstration, there will be at least 1 visit every 3 months, with a maximum of 90 days between visits. CM/ICT/Waiver Service Coordinator will make Monthly Telephonic Contact with the member from month 7 until the conclusion of the Demonstration and will also make Telephonic Contact as needed from month 0 until the conclusion of the Demonstration.</td>
+									<td>2016-08-10</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>d81f4960-fecf-4c1e-a854-68c8b8ccd307</td>
+									<td>c32f82cb-d331-486b-a481-7420f549f4ca</td>
+									<td>active</td>
+									<td>CM will assess the member/family/caregiver to identify functional declines that are related to a recent, acute, event or condition.</td>
+									<td>2016-12-28</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>66342a2d-ca54-4b7b-a11b-58733983af46</td>
+									<td>c32f82cb-d331-486b-a481-7420f549f4ca</td>
+									<td>active</td>
+									<td>CM will link the member with healthcare providers for the evaluation and treatment of medical problems and associated functional decline.</td>
+									<td>2016-12-28</td>
+									<td>2017-06-26</td>
+								</tr>
+								<tr>
+									<td>68f3edd0-38ed-4152-8e02-c7072aa9935b</td>
+									<td>c32f82cb-d331-486b-a481-7420f549f4ca</td>
+									<td>active</td>
+									<td>CM will educate the member/family/caregiver on care interventions to reduce functional loss, increase ADL self-performance and return the member to his/her previous functional level.</td>
+									<td>2016-12-28</td>
+									<td>2017-06-26</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.131"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.131" extension="2015-08-01"/>
+							<id extension="b9e62bf5-de50-4920-a776-c9927fe3c780"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>Case Manager facilitates and coordinates with obtaining appropriate care assistance</text>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="08c90f58-90ee-442c-815d-d6f8b22c2df5"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
+							<id extension="892a84b7-d982-4615-882d-40ba89234167"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>CM will obtain a history of the member's troubling behaviors to include: the onset, duration and severity of the behaviors; the member's perception of the behaviors and the precipitating factors; the identified measures that have been found to mitigate the troubling behaviors.</text>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="b9ae8de4-3101-4b4c-b0a1-41103e6b470a"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.131"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.131" extension="2015-08-01"/>
+							<id extension="e7cf8f59-a538-4d73-9a4d-de13e4b270d8"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>CM will obtain a history of the member's comorbidities, including new physical or behavioral health problems, or a flare-up of a known chronic condition that may be causing or aggravating a behavior symptom.</text>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="b9ae8de4-3101-4b4c-b0a1-41103e6b470a"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
+							<id extension="1ce9d9c6-3fd0-466c-bae5-4c5f11f587c7"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>CM will preform a medication reconciliation.</text>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="b9ae8de4-3101-4b4c-b0a1-41103e6b470a"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
+							<id extension="dd13c03b-80a0-4ef7-81a5-6930c7d62735"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>CM/ICT/Waiver Service Coordinator will complete Face to Face visits with the Medium Risk member, per the following schedule: For months 0-2 there will be 1 visit. For months 3-6 there will be at least 2 visits with a maximum of 60 days between visits. For month 7 until the conclusion of the Demonstration, there will be at least 1 visit every 3 months, with a maximum of 90 days between visits. CM/ICT/Waiver Service Coordinator will make Monthly Telephonic Contact with the member from month 7 until the conclusion of the Demonstration and will also make Telephonic Contact as needed from month 0 until the conclusion of the Demonstration.</text>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20160810000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="3ac5aa7a-90ab-4ee7-90e0-765dd6026f04"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
+							<id extension="d81f4960-fecf-4c1e-a854-68c8b8ccd307"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>CM will assess the member/family/caregiver to identify functional declines that are related to a recent, acute, event or condition.</text>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20161228000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="c32f82cb-d331-486b-a481-7420f549f4ca"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
+							<id extension="66342a2d-ca54-4b7b-a11b-58733983af46"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>CM will link the member with healthcare providers for the evaluation and treatment of medical problems and associated functional decline.</text>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20161228000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="c32f82cb-d331-486b-a481-7420f549f4ca"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
+							<id extension="68f3edd0-38ed-4152-8e02-c7072aa9935b"/>
+							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
+							<text>CM will educate the member/family/caregiver on care interventions to reduce functional loss, increase ADL self-performance and return the member to his/her previous functional level.</text>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20161228000000"/>
+								<high value="20170626000000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="RSON">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.122"/>
+									<id root="c32f82cb-d331-486b-a481-7420f549f4ca"/>
+									<code nullFlavor="NP"/>
+									<statusCode code="completed"/>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section nullFlavor="NI">
+					<templateId root="2.16.840.1.113883.10.20.22.2.61"/>
+					<code code="11383-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Status Evaluations and Outcomes Section"/>
+					<title>Health Status Evaluations and Outcomes Section</title>
+					<text>
+						<paragraph>Additional Care Plan Information<br/>
+						</paragraph>
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Programe Type</td>
+									<td>CM</td>
+								</tr>
+								<tr>
+									<td>Program</td>
+									<td>PH</td>
+								</tr>
+								<tr>
+									<td>Case Manager Name</td>
+									<td>John Everyman</td>
+								</tr>
+								<tr>
+									<td>Case Manager Phone</td>
+									<td>1-222-222-2222</td>
+								</tr>
+								<tr>
+									<td>Case Diagnosis</td>
+									<td>ICD10 -- I69.354 -- Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side -- 2016-08-10 -- Primary: true</td>
+								</tr>
+								<tr>
+									<td>Case Diagnosis</td>
+									<td>ICD10 -- M62.81 -- Muscle weakness (generalized) -- 2016-12-28 -- Primary: false</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--
+							<?xml version="1.0" encoding="UTF-8"?>
+							<TransitionOfCare Guid="fbb533a3-df25-48b2-8d97-3e7d40d8bf6a" Version="1.0">
+								<Author>
+									<Name>CareSource</Name>
+									<Phone>1-111-111-1111</Phone>
+									<PhoneExtension>11111</PhoneExtension>
+									<Address>
+										<AddressLine>230 N Main St</AddressLine>
+										<City>Dayton</City>
+										<State>OH</State>
+										<ZipCode>45402</ZipCode>
+									</Address>
+								</Author>
+								<Patient>
+									<FirstName>Jane</FirstName>
+									<LastName>Doe</LastName>
+									<MedicaidId>999999999999</MedicaidId>
+									<Gender>F</Gender>
+									<Address>
+										<AddressLine>106 Place St.</AddressLine>
+										<City>Cityville</City>
+										<State>Ohio</State>
+										<ZipCode>55555</ZipCode>
+									</Address>
+									<Phone>1-999-999-9999</Phone>
+									<DateOfBirth>1985-06-02</DateOfBirth>
+								</Patient>
+								<CaseManagement>
+									<ProgramType>CM</ProgramType>
+									<Program>PH</Program>
+									<CaseManager>
+										<FirstName>John</FirstName>
+										<LastName>Everyman</LastName>
+										<Phone>1-222-222-2222</Phone>
+										<PhoneExtension></PhoneExtension>
+									</CaseManager>
+									<CarePlan>
+										<Problems>
+											<Problem Guid="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb">
+												<Description>Risk for ineffective health maintenance due to complex health conditions</Description>
+												<StartDate>2016-08-10</StartDate>
+												<EndDate>2017-06-26</EndDate>
+												<Goals>
+													<Goal Guid="08c90f58-90ee-442c-815d-d6f8b22c2df5" ProblemGuid="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb">
+														<Description>Member/caregiver knowledgeable in health maintenance and prevention strategies</Description>
+														<Status>active</Status>
+														<StartDate>2016-08-10</StartDate>
+														<EndDate>2017-06-26</EndDate>
+														<Interventions>
+															<Intervention Guid="b9e62bf5-de50-4920-a776-c9927fe3c780" GoalGuid="08c90f58-90ee-442c-815d-d6f8b22c2df5">
+																<Description>Case Manager facilitates and coordinates with obtaining appropriate care assistance</Description>
+																<Status>completed</Status>
+																<StartDate>2016-08-10</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+														</Interventions>
+													</Goal>
+												</Goals>
+												<Conditions>
+													<Diagnosis Guid="6dc4e251-0679-4554-bfd8-1e63d9e46965" ProblemGuid="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb">
+														<Code>I69.354</Code>
+														<CodeType>ICD10</CodeType>
+														<Description>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</Description>
+														<DiagnosisDate>2016-08-10</DiagnosisDate>
+														<Primary>true</Primary>
+													</Diagnosis>
+												</Conditions>
+											</Problem>
+											<Problem Guid="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1">
+												<Description>Behavior</Description>
+												<StartDate>2016-08-10</StartDate>
+												<EndDate>2017-06-26</EndDate>
+												<Goals>
+													<Goal Guid="b9ae8de4-3101-4b4c-b0a1-41103e6b470a" ProblemGuid="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1">
+														<Description>Identify and Eliminate underlying conditions or stressors that contribute to behavioral problems.</Description>
+														<Status>active</Status>
+														<StartDate>2016-08-10</StartDate>
+														<EndDate>2017-06-26</EndDate>
+														<Interventions>
+															<Intervention Guid="892a84b7-d982-4615-882d-40ba89234167" GoalGuid="b9ae8de4-3101-4b4c-b0a1-41103e6b470a">
+																<Description>CM will obtain a history of the member's troubling behaviors to include: the onset, duration and severity of the behaviors; the member's perception of the behaviors and the precipitating factors; the identified measures that have been found to mitigate the troubling behaviors.</Description>
+																<Status>active</Status>
+																<StartDate>2016-08-10</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+															<Intervention Guid="e7cf8f59-a538-4d73-9a4d-de13e4b270d8" GoalGuid="b9ae8de4-3101-4b4c-b0a1-41103e6b470a">
+																<Description>CM will obtain a history of the member's comorbidities, including new physical or behavioral health problems, or a flare-up of a known chronic condition that may be causing or aggravating a behavior symptom.</Description>
+																<Status>completed</Status>
+																<StartDate>2016-08-10</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+															<Intervention Guid="1ce9d9c6-3fd0-466c-bae5-4c5f11f587c7" GoalGuid="b9ae8de4-3101-4b4c-b0a1-41103e6b470a">
+																<Description>CM will preform a medication reconciliation.</Description>
+																<Status>active</Status>
+																<StartDate>2016-08-10</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+														</Interventions>
+													</Goal>
+												</Goals>
+												<Conditions>
+													<Diagnosis Guid="4cbf2c39-6c32-4a6c-a47d-a84afafeb265" ProblemGuid="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1">
+														<Code>I69.354</Code>
+														<CodeType>ICD10</CodeType>
+														<Description>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</Description>
+														<DiagnosisDate>2016-08-10</DiagnosisDate>
+														<Primary>true</Primary>
+													</Diagnosis>
+												</Conditions>
+											</Problem>
+											<Problem Guid="32a54819-8754-430c-8857-a2c67c2ea1ad">
+												<Description>Care Management</Description>
+												<StartDate>2016-08-10</StartDate>
+												<EndDate>2017-06-26</EndDate>
+												<Goals>
+													<Goal Guid="3ac5aa7a-90ab-4ee7-90e0-765dd6026f04" ProblemGuid="32a54819-8754-430c-8857-a2c67c2ea1ad">
+														<Description>Member with Medium Medical, Behavioral, Social and/or Long Term Service and Support Needs will have ongoing Care Management Contact and Visits</Description>
+														<Status>active</Status>
+														<StartDate>2016-08-10</StartDate>
+														<EndDate>2017-06-26</EndDate>
+														<Interventions>
+															<Intervention Guid="dd13c03b-80a0-4ef7-81a5-6930c7d62735" GoalGuid="3ac5aa7a-90ab-4ee7-90e0-765dd6026f04">
+																<Description>CM/ICT/Waiver Service Coordinator will complete Face to Face visits with the Medium Risk member, per the following schedule: For months 0-2 there will be 1 visit. For months 3-6 there will be at least 2 visits with a maximum of 60 days between visits. For month 7 until the conclusion of the Demonstration, there will be at least 1 visit every 3 months, with a maximum of 90 days between visits. CM/ICT/Waiver Service Coordinator will make Monthly Telephonic Contact with the member from month 7 until the conclusion of the Demonstration and will also make Telephonic Contact as needed from month 0 until the conclusion of the Demonstration.</Description>
+																<Status>active</Status>
+																<StartDate>2016-08-10</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+														</Interventions>
+													</Goal>
+												</Goals>
+												<Conditions>
+													<Diagnosis Guid="7fbd0d9e-fda4-4fd3-a49f-0e6e62ae0767" ProblemGuid="32a54819-8754-430c-8857-a2c67c2ea1ad">
+														<Code>I69.354</Code>
+														<CodeType>ICD10</CodeType>
+														<Description>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</Description>
+														<DiagnosisDate>2016-08-10</DiagnosisDate>
+														<Primary>true</Primary>
+													</Diagnosis>
+												</Conditions>
+											</Problem>
+											<Problem Guid="6998849c-c7a0-4870-a84e-080996da9392">
+												<Description>ADL</Description>
+												<StartDate>2016-12-28</StartDate>
+												<EndDate>2017-06-26</EndDate>
+												<Goals>
+													<Goal Guid="c32f82cb-d331-486b-a481-7420f549f4ca" ProblemGuid="6998849c-c7a0-4870-a84e-080996da9392">
+														<Description>Member will reverse functional loss resulting from a recent, acute, event or condition.</Description>
+														<Status>active</Status>
+														<StartDate>2016-12-28</StartDate>
+														<EndDate>2017-06-26</EndDate>
+														<Interventions>
+															<Intervention Guid="d81f4960-fecf-4c1e-a854-68c8b8ccd307" GoalGuid="c32f82cb-d331-486b-a481-7420f549f4ca">
+																<Description>CM will assess the member/family/caregiver to identify functional declines that are related to a recent, acute, event or condition.</Description>
+																<Status>active</Status>
+																<StartDate>2016-12-28</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+															<Intervention Guid="66342a2d-ca54-4b7b-a11b-58733983af46" GoalGuid="c32f82cb-d331-486b-a481-7420f549f4ca">
+																<Description>CM will link the member with healthcare providers for the evaluation and treatment of medical problems and associated functional decline.</Description>
+																<Status>active</Status>
+																<StartDate>2016-12-28</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+															<Intervention Guid="68f3edd0-38ed-4152-8e02-c7072aa9935b" GoalGuid="c32f82cb-d331-486b-a481-7420f549f4ca">
+																<Description>CM will educate the member/family/caregiver on care interventions to reduce functional loss, increase ADL self-performance and return the member to his/her previous functional level.</Description>
+																<Status>active</Status>
+																<StartDate>2016-12-28</StartDate>
+																<EndDate>2017-06-26</EndDate>
+															</Intervention>
+														</Interventions>
+													</Goal>
+												</Goals>
+												<Conditions>
+													<Diagnosis Guid="ee44db84-2de7-4b06-9b1a-e5790cf3e784" ProblemGuid="6998849c-c7a0-4870-a84e-080996da9392">
+														<Code>M62.81</Code>
+														<CodeType>ICD10</CodeType>
+														<Description>Muscle weakness (generalized)</Description>
+														<DiagnosisDate>2016-12-28</DiagnosisDate>
+														<Primary>false</Primary>
+													</Diagnosis>
+												</Conditions>
+											</Problem>
+										</Problems>
+									</CarePlan>
+								</CaseManagement>
+								<Conditions>
+									<Diagnosis Guid="4cbf2c39-6c32-4a6c-a47d-1564846ds">
+										<Code>I69.354</Code>
+										<CodeType>ICD10</CodeType>
+										<Description>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</Description>
+										<DiagnosisDate>2016-08-10</DiagnosisDate>
+										<Primary>true</Primary>
+									</Diagnosis>
+									<Diagnosis Guid="ee44db84-2de7-4b06-9b1a-e5790cf3e784" ProblemGuid="6998849c-c7a0-4870-a84e-080996da9392">
+										<Code>M62.81</Code>
+										<CodeType>ICD10</CodeType>
+										<Description>Muscle weakness (generalized)</Description>
+										<DiagnosisDate>2016-12-28</DiagnosisDate>
+										<Primary>false</Primary>
+									</Diagnosis>
+								</Conditions>
+							</TransitionOfCare>
+						-->
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
