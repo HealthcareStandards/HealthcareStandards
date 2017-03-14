@@ -1,0 +1,1 @@
+This format is used to convey Care Plan information in the CCDA standard template, but also extends it with some Plain Old XML that is embedded to relay additional information not supported by the standard that is necesary to automate some of the transition of care management, especially between MCOs (Managed Care Organization).
