@@ -8,7 +8,7 @@
 	<id root="fbb533a3-df25-48b2-8d97-3e7d40d8bf6a"/>
 	<code code="52521-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Overall Plan of Care/Advance Care Directives"/>
 	<title>Care Plan</title>
-	<effectiveTime value="20170307145707-0500"/>
+	<effectiveTime value="20170315112506-0400"/>
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
 	<languageCode code="en-US"/>
 	<recordTarget>
@@ -37,7 +37,7 @@
 		</patientRole>
 	</recordTarget>
 	<author>
-		<time value="20170307145707-0500"/>
+		<time value="20170315112506-0400"/>
 		<assignedAuthor>
 			<id nullFlavor="UNK" root="2.16.840.1.113883.4.6"/>
 			<addr>
@@ -71,7 +71,7 @@
 	<documentationOf>
 		<serviceEvent classCode="PCPR">
 			<effectiveTime>
-				<low value="20170307145707-0500"/>
+				<low value="20170315112506-0400"/>
 			</effectiveTime>
 			<performer typeCode="PRF">
 				<assignedEntity>
@@ -86,6 +86,43 @@
 	<component>
 		<structuredBody>
 			<component>
+				<section nullFlavor="NI">
+					<templateId root="2.16.840.1.113883.10.20.22.2.61"/>
+					<code code="11383-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Status Evaluations and Outcomes Section"/>
+					<title>Health Status Evaluations and Outcomes Section</title>
+					<text>
+						<table>
+							<caption>Additional Care Plan Information</caption>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Programe Type</td>
+									<td>CM</td>
+								</tr>
+								<tr>
+									<td>Program</td>
+									<td>PH</td>
+								</tr>
+								<tr>
+									<td>Case Manager Name</td>
+									<td>John Everyman</td>
+								</tr>
+								<tr>
+									<td>Case Manager Phone</td>
+									<td>1-222-222-2222</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--Internal Transition of Care v3 Contents-->
+					</text>
+				</section>
+			</component>
+			<component>
 				<section>
 					<templateId root="2.16.840.1.113883.10.20.22.2.58"/>
 					<templateId root="2.16.840.1.113883.10.20.22.2.58" extension="2015-08-01"/>
@@ -93,6 +130,7 @@
 					<title>Health Concerns</title>
 					<text>
 						<table>
+							<caption>Problems</caption>
 							<thead>
 								<tr>
 									<th>GUID</th>
@@ -125,6 +163,76 @@
 									<td>ADL</td>
 									<td>2016-12-28</td>
 									<td>2017-06-26</td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<caption>Diagnoses</caption>
+							<thead>
+								<tr>
+									<th>GUID</th>
+									<th>Problem GUID</th>
+									<th>Code</th>
+									<th>Code Type</th>
+									<th>Description</th>
+									<th>Diagnosis Date</th>
+									<th>Primary</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>4cbf2c39-6c32-4a6c-a47d-1564846ds</td>
+									<td>(Care Plan Level Diagnosis)</td>
+									<td>I69.354</td>
+									<td>ICD10</td>
+									<td>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</td>
+									<td>2016-08-10</td>
+									<td>true</td>
+								</tr>
+								<tr>
+									<td>ee44db84-2de7-4b06-9b1a-e5790cf3e784</td>
+									<td>(Care Plan Level Diagnosis)</td>
+									<td>M62.81</td>
+									<td>ICD10</td>
+									<td>Muscle weakness (generalized)</td>
+									<td>2016-12-28</td>
+									<td>false</td>
+								</tr>
+								<tr>
+									<td>6dc4e251-0679-4554-bfd8-1e63d9e46965</td>
+									<td>4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb</td>
+									<td>I69.354</td>
+									<td>ICD10</td>
+									<td>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</td>
+									<td>2016-08-10</td>
+									<td>true</td>
+								</tr>
+								<tr>
+									<td>4cbf2c39-6c32-4a6c-a47d-a84afafeb265</td>
+									<td>f659cf01-b53e-4b01-b8bf-1b0c575a6cf1</td>
+									<td>I69.354</td>
+									<td>ICD10</td>
+									<td>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</td>
+									<td>2016-08-10</td>
+									<td>true</td>
+								</tr>
+								<tr>
+									<td>7fbd0d9e-fda4-4fd3-a49f-0e6e62ae0767</td>
+									<td>32a54819-8754-430c-8857-a2c67c2ea1ad</td>
+									<td>I69.354</td>
+									<td>ICD10</td>
+									<td>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</td>
+									<td>2016-08-10</td>
+									<td>true</td>
+								</tr>
+								<tr>
+									<td>ee44db84-2de7-4b06-9b1a-e5790cf3e784</td>
+									<td>6998849c-c7a0-4870-a84e-080996da9392</td>
+									<td>M62.81</td>
+									<td>ICD10</td>
+									<td>Muscle weakness (generalized)</td>
+									<td>2016-12-28</td>
+									<td>false</td>
 								</tr>
 							</tbody>
 						</table>
@@ -421,7 +529,7 @@
 							<value xsi:type="TN">Member/caregiver knowledgeable in health maintenance and prevention strategies</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170307145707-0500"/>
+								<time value="20170315112506-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -457,7 +565,7 @@
 							<value xsi:type="TN">Identify and Eliminate underlying conditions or stressors that contribute to behavioral problems.</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170307145707-0500"/>
+								<time value="20170315112506-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -509,7 +617,7 @@
 							<value xsi:type="TN">Member with Medium Medical, Behavioral, Social and/or Long Term Service and Support Needs will have ongoing Care Management Contact and Visits</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170307145707-0500"/>
+								<time value="20170315112506-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -545,7 +653,7 @@
 							<value xsi:type="TN">Member will reverse functional loss resulting from a recent, acute, event or condition.</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170307145707-0500"/>
+								<time value="20170315112506-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -849,44 +957,6 @@
 					</entry>
 				</section>
 			</component>
-			<component>
-				<section nullFlavor="NI">
-					<templateId root="2.16.840.1.113883.10.20.22.2.61"/>
-					<code code="11383-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Status Evaluations and Outcomes Section"/>
-					<title>Health Status Evaluations and Outcomes Section</title>
-					<text>
-						<paragraph>Additional Care Plan Information<br/></paragraph>
-						<table>
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Value</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Programe Type</td>
-									<td>CM</td>
-								</tr>
-								<tr>
-									<td>Program</td>
-									<td>PH</td>
-								</tr>
-								<tr>
-									<td>Case Manager Name</td>
-									<td>John Everyman</td>
-								</tr>
-								<tr>
-									<td>Case Manager Phone</td>
-									<td>1-222-222-2222</td>
-								</tr>
-								<tr>
-									<td>Case Diagnosis</td>
-									<td>ICD10 -- I69.354 -- Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side -- 2016-08-10 -- Primary: true</td>
-								</tr>
-								<tr>
-									<td>Case Diagnosis</td>
-									<td>ICD10 -- M62.81 -- Muscle weakness (generalized) -- 2016-12-28 -- Primary: false</td>
-								</tr>
-							</tbody>
-						</table><!--Internal Transition of Care v3 Contents--></text></section></component></structuredBody></component></ClinicalDocument>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
