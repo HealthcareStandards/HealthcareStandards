@@ -50,7 +50,7 @@
 					<patientRole>
 						<id>
 							<xsl:attribute name="root" namespace="" select="'~~ Georgia Medcaid OID HERE ~~'"/>
-							<xsl:attribute name="extension" namespace="" select="fn:string($var2_Patient/*:MedicaidId[fn:namespace-uri() eq ''])"/>
+							<xsl:attribute name="root" namespace="" select="fn:string($var2_Patient/*:MedicaidId[fn:namespace-uri() eq ''])"/>
 						</id>
 						<addr>
 							<xsl:attribute name="use" namespace="" select="'WP'"/>
@@ -112,7 +112,7 @@
 					<assignedAuthor>
 						<id>
 							<xsl:attribute name="nullFlavor" namespace="" select="'UNK'"/>
-							<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.4.6'"/>
+							<!-- <xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.4.6'"/> -->
 						</id>
 						<addr>
 							<state>
@@ -168,7 +168,7 @@
 						<representedCustodianOrganization>
 							<id>
 								<xsl:attribute name="nullFlavor" namespace="" select="'UNK'"/>
-								<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.4.6'"/>
+								<!-- <xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.4.6'"/> -->
 							</id>
 							<name>
 								<xsl:sequence select="fn:string($var15_Author/*:Name[fn:namespace-uri() eq ''])"/>
@@ -477,7 +477,7 @@
 												<xsl:attribute name="extension" namespace="" select="'2015-08-01'"/>
 											</templateId>
 											<id>
-												<xsl:attribute name="extension" namespace="" select="$var23_Guid_as_string"/>
+												<xsl:attribute name="root" namespace="" select="$var23_Guid_as_string"/>
 											</id>
 											<code>
 												<xsl:attribute name="code" namespace="" select="'75310-3'"/>
@@ -500,7 +500,7 @@
 														<xsl:sequence select="$var22_let"/>
 													</templateId>
 													<id>
-														<xsl:attribute name="extension" namespace="" select="$var23_Guid_as_string"/>
+														<xsl:attribute name="root" namespace="" select="$var23_Guid_as_string"/>
 													</id>
 													<code>
 														<xsl:sequence select="$var21_let"/>
@@ -553,7 +553,7 @@
 																	<xsl:sequence select="$var22_let"/>
 																</templateId>
 																<id>
-																	<xsl:attribute name="extension" namespace="" select="fn:string(@Guid)"/>
+																	<xsl:attribute name="root" namespace="" select="fn:string(@Guid)"/>
 																</id>
 																<code>
 																	<xsl:sequence select="$var21_let"/>
@@ -676,7 +676,7 @@
 												<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.121'"/>
 											</templateId>
 											<id>
-												<xsl:attribute name="extension" namespace="" select="fn:string(@Guid)"/>
+												<xsl:attribute name="root" namespace="" select="fn:string(@Guid)"/>
 											</id>
 											<code>
 												<xsl:attribute name="xsi:type" select="xs:QName('CE')"/>
@@ -844,7 +844,7 @@
 												<xsl:attribute name="extension" namespace="" select="'2015-08-01'"/>
 											</templateId>
 											<id>
-												<xsl:attribute name="extension" namespace="" select="fn:string(@Guid)"/>
+												<xsl:attribute name="root" namespace="" select="fn:string(@Guid)"/>
 											</id>
 											<code>
 												<xsl:attribute name="code" namespace="" select="'362956003'"/>
