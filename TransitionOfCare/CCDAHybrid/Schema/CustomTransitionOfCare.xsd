@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2017 sp2 (x64) (http://www.altova.com) by Alex Daufel (CSMG Headquarters) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="TransitionOfCare">
 		<xs:complexType>
@@ -24,33 +23,8 @@
 						<xs:documentation source="/ClinicalDocument/custodian/assignedCustodian/representedCustodianOrganization/telecom">@value - attribute</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element ref="PhoneExtension"/>
-				<xs:element name="Address">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="AddressLine">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/Author/assignedAuthor/addr/streetAddressLine"/>
-								</xs:annotation>
-							</xs:element>
-							<xs:element ref="City">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/Author/assignedAuthor/addr/city"/>
-								</xs:annotation>
-							</xs:element>
-							<xs:element ref="State">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/Author/assignedAuthor/addr/state"/>
-								</xs:annotation>
-							</xs:element>
-							<xs:element ref="ZipCode">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/Author/assignedAuthor/addr/postalCode"/>
-								</xs:annotation>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="PhoneExtension" minOccurs="0"/>
+				<xs:element ref="Address"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -101,32 +75,7 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="Address">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="AddressLine">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/streetAddressLine"/>
-								</xs:annotation>
-							</xs:element>
-							<xs:element ref="City">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/city"/>
-								</xs:annotation>
-							</xs:element>
-							<xs:element ref="State">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/state"/>
-								</xs:annotation>
-							</xs:element>
-							<xs:element ref="ZipCode">
-								<xs:annotation>
-									<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/postalCode"/>
-								</xs:annotation>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="Address"/>
 				<xs:element ref="Phone">
 					<xs:annotation>
 						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/telecom">@value  - attribute</xs:documentation>
@@ -163,11 +112,12 @@
 									<xs:documentation/>
 								</xs:annotation>
 							</xs:element>
-							<xs:element ref="PhoneExtension"/>
+							<xs:element ref="PhoneExtension" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element ref="CarePlan"/>
+				<xs:element ref="Conditions" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -226,7 +176,7 @@
 	<xs:element name="CarePlan">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Problems" minOccurs="0">
+				<xs:element name="Problems">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element ref="Problem" maxOccurs="unbounded"/>
@@ -403,7 +353,7 @@
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
-			<xs:attribute name="Guid" use="required"/>
+			<xs:attribute name="Guid" type="xs:string" use="required"/>
 			<xs:attribute name="GoalGuid" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
@@ -473,14 +423,70 @@
 	<xs:element name="Description" type="xs:string"/>
 	<xs:element name="StartDate" type="xs:date"/>
 	<xs:element name="EndDate" type="xs:date"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="NPI" type="xs:string"/>
+	<xs:element name="FosterCare" type="xs:boolean"/>
+	<xs:element name="Pharmacy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name"/>
+				<xs:element ref="NPI"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Provider">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name"/>
+				<xs:element ref="NPI"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PharmacyLockIn">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Pharmacy"/>
+				<xs:element ref="Provider"/>
+				<xs:element ref="StartDate"/>
+				<xs:element ref="EndDate"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Address">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AddressLine">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/streetAddressLine"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="City">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/city"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="State">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/state"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="ZipCode">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/postalCode"/>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 	<xs:complexType name="TransitionOfCareType">
 		<xs:sequence>
 			<xs:element ref="Author"/>
 			<xs:element ref="Patient"/>
-			<xs:element ref="CaseManagement"/>
-			<xs:element ref="Conditions"/>
+			<xs:element ref="CaseManagement" minOccurs="0"/>
+			<xs:element ref="PharmacyLockIn" minOccurs="0"/>
+			<xs:element ref="FosterCare" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="Version" type="xs:string"/>
-		<xs:attribute name="Guid"/>
+		<xs:attribute name="Guid" type="xs:string"/>
 	</xs:complexType>
 </xs:schema>

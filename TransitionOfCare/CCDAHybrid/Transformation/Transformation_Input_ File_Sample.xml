@@ -182,21 +182,34 @@
 				</Problem>
 			</Problems>
 		</CarePlan>
+		<Conditions>
+			<Diagnosis Guid="4cbf2c39-6c32-4a6c-a47d-1564846ds">
+				<Code>I69.354</Code>
+				<CodeType>ICD10</CodeType>
+				<Description>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</Description>
+				<DiagnosisDate>2016-08-10</DiagnosisDate>
+				<Primary>true</Primary>
+			</Diagnosis>
+			<Diagnosis Guid="ee44db84-2de7-4b06-9b1a-e5790cf3e784" ProblemGuid="6998849c-c7a0-4870-a84e-080996da9392">
+				<Code>M62.81</Code>
+				<CodeType>ICD10</CodeType>
+				<Description>Muscle weakness (generalized)</Description>
+				<DiagnosisDate>2016-12-28</DiagnosisDate>
+				<Primary>false</Primary>
+			</Diagnosis>
+		</Conditions>
 	</CaseManagement>
-	<Conditions>
-		<Diagnosis Guid="4cbf2c39-6c32-4a6c-a47d-1564846ds">
-			<Code>I69.354</Code>
-			<CodeType>ICD10</CodeType>
-			<Description>Hemiplegia and hemiparesis following cerebral infarction affecting left non-dominant side</Description>
-			<DiagnosisDate>2016-08-10</DiagnosisDate>
-			<Primary>true</Primary>
-		</Diagnosis>
-		<Diagnosis Guid="ee44db84-2de7-4b06-9b1a-e5790cf3e784" ProblemGuid="6998849c-c7a0-4870-a84e-080996da9392">
-			<Code>M62.81</Code>
-			<CodeType>ICD10</CodeType>
-			<Description>Muscle weakness (generalized)</Description>
-			<DiagnosisDate>2016-12-28</DiagnosisDate>
-			<Primary>false</Primary>
-		</Diagnosis>
-	</Conditions>
+	<PharmacyLockIn>
+		<Pharmacy>
+			<Name>CVS</Name>
+			<NPI>0123456789</NPI>
+		</Pharmacy>
+		<Provider>
+			<Name>Greatest Provider Ever</Name>
+			<NPI>0123456789</NPI>
+		</Provider>
+		<StartDate>2016-08-10</StartDate>
+		<EndDate>2017-02-10</EndDate>
+	</PharmacyLockIn>
+	<FosterCare>true</FosterCare>
 </TransitionOfCare>
