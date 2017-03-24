@@ -8,7 +8,7 @@
 	<id root="fbb533a3-df25-48b2-8d97-3e7d40d8bf6a"/>
 	<code code="52521-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Overall Plan of Care/Advance Care Directives"/>
 	<title>Care Plan</title>
-	<effectiveTime value="20170315112506-0400"/>
+	<effectiveTime value="20170324142715-0400"/>
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
 	<languageCode code="en-US"/>
 	<recordTarget>
@@ -37,9 +37,9 @@
 		</patientRole>
 	</recordTarget>
 	<author>
-		<time value="20170315112506-0400"/>
+		<time value="20170324142715-0400"/>
 		<assignedAuthor>
-			<id nullFlavor="UNK" root="2.16.840.1.113883.4.6"/>
+			<id nullFlavor="UNK"/>
 			<addr>
 				<state>OH</state>
 				<city>Dayton</city>
@@ -56,7 +56,7 @@
 	<custodian>
 		<assignedCustodian>
 			<representedCustodianOrganization>
-				<id nullFlavor="UNK" root="2.16.840.1.113883.4.6"/>
+				<id nullFlavor="UNK"/>
 				<name>CareSource</name>
 				<telecom value="1-111-111-1111 11111" use="WP"/>
 				<addr>
@@ -71,7 +71,7 @@
 	<documentationOf>
 		<serviceEvent classCode="PCPR">
 			<effectiveTime>
-				<low value="20170315112506-0400"/>
+				<low value="20170324142715-0400"/>
 			</effectiveTime>
 			<performer typeCode="PRF">
 				<assignedEntity>
@@ -102,11 +102,11 @@
 							<tbody>
 								<tr>
 									<td>Programe Type</td>
-									<td>CM</td>
+									<td>Case Managed</td>
 								</tr>
 								<tr>
 									<td>Program</td>
-									<td>PH</td>
+									<td>Physical Health</td>
 								</tr>
 								<tr>
 									<td>Case Manager Name</td>
@@ -115,6 +115,34 @@
 								<tr>
 									<td>Case Manager Phone</td>
 									<td>1-222-222-2222</td>
+								</tr>
+								<tr>
+									<td>Pharmacy Name</td>
+									<td>CVS</td>
+								</tr>
+								<tr>
+									<td>Pharmacy NPI</td>
+									<td>0123456789</td>
+								</tr>
+								<tr>
+									<td>Pharmacy Provider Name</td>
+									<td>Greatest Provider Ever</td>
+								</tr>
+								<tr>
+									<td>Pharmacy Provider NPI</td>
+									<td>0123456789</td>
+								</tr>
+								<tr>
+									<td>Pharmacy Lock-In Start Date</td>
+									<td>2016-08-10</td>
+								</tr>
+								<tr>
+									<td>Pharmacy Lock-In End Date</td>
+									<td>2017-02-10</td>
+								</tr>
+								<tr>
+									<td>Was in Foster Care</td>
+									<td>true</td>
 								</tr>
 							</tbody>
 						</table>
@@ -241,7 +269,7 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
-							<id extension="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb"/>
+							<id root="4d4ab7f5-d4f8-42e1-ad74-a463a2d29efb"/>
 							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
 							<statusCode code="active"/>
 							<entryRelationship typeCode="REFR">
@@ -297,7 +325,7 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
-							<id extension="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1"/>
+							<id root="f659cf01-b53e-4b01-b8bf-1b0c575a6cf1"/>
 							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
 							<statusCode code="active"/>
 							<entryRelationship typeCode="REFR">
@@ -353,7 +381,7 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
-							<id extension="32a54819-8754-430c-8857-a2c67c2ea1ad"/>
+							<id root="32a54819-8754-430c-8857-a2c67c2ea1ad"/>
 							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
 							<statusCode code="active"/>
 							<entryRelationship typeCode="REFR">
@@ -409,7 +437,7 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.132"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.132" extension="2015-08-01"/>
-							<id extension="6998849c-c7a0-4870-a84e-080996da9392"/>
+							<id root="6998849c-c7a0-4870-a84e-080996da9392"/>
 							<code code="75310-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health Concern Act"/>
 							<statusCode code="active"/>
 							<entryRelationship typeCode="REFR">
@@ -519,7 +547,7 @@
 					<entry>
 						<observation classCode="OBS" moodCode="GOL">
 							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
-							<id extension="08c90f58-90ee-442c-815d-d6f8b22c2df5"/>
+							<id root="08c90f58-90ee-442c-815d-d6f8b22c2df5"/>
 							<code xsi:type="CE" nullFlavor="UNK"/>
 							<statusCode code="active"/>
 							<effectiveTime>
@@ -529,7 +557,7 @@
 							<value xsi:type="TN">Member/caregiver knowledgeable in health maintenance and prevention strategies</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170315112506-0400"/>
+								<time value="20170324142715-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -555,7 +583,7 @@
 					<entry>
 						<observation classCode="OBS" moodCode="GOL">
 							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
-							<id extension="b9ae8de4-3101-4b4c-b0a1-41103e6b470a"/>
+							<id root="b9ae8de4-3101-4b4c-b0a1-41103e6b470a"/>
 							<code xsi:type="CE" nullFlavor="UNK"/>
 							<statusCode code="active"/>
 							<effectiveTime>
@@ -565,7 +593,7 @@
 							<value xsi:type="TN">Identify and Eliminate underlying conditions or stressors that contribute to behavioral problems.</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170315112506-0400"/>
+								<time value="20170324142715-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -607,7 +635,7 @@
 					<entry>
 						<observation classCode="OBS" moodCode="GOL">
 							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
-							<id extension="3ac5aa7a-90ab-4ee7-90e0-765dd6026f04"/>
+							<id root="3ac5aa7a-90ab-4ee7-90e0-765dd6026f04"/>
 							<code xsi:type="CE" nullFlavor="UNK"/>
 							<statusCode code="active"/>
 							<effectiveTime>
@@ -617,7 +645,7 @@
 							<value xsi:type="TN">Member with Medium Medical, Behavioral, Social and/or Long Term Service and Support Needs will have ongoing Care Management Contact and Visits</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170315112506-0400"/>
+								<time value="20170324142715-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -643,7 +671,7 @@
 					<entry>
 						<observation classCode="OBS" moodCode="GOL">
 							<templateId root="2.16.840.1.113883.10.20.22.4.121"/>
-							<id extension="c32f82cb-d331-486b-a481-7420f549f4ca"/>
+							<id root="c32f82cb-d331-486b-a481-7420f549f4ca"/>
 							<code xsi:type="CE" nullFlavor="UNK"/>
 							<statusCode code="active"/>
 							<effectiveTime>
@@ -653,7 +681,7 @@
 							<value xsi:type="TN">Member will reverse functional loss resulting from a recent, acute, event or condition.</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170315112506-0400"/>
+								<time value="20170324142715-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -783,7 +811,7 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.131"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.131" extension="2015-08-01"/>
-							<id extension="b9e62bf5-de50-4920-a776-c9927fe3c780"/>
+							<id root="b9e62bf5-de50-4920-a776-c9927fe3c780"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>Case Manager facilitates and coordinates with obtaining appropriate care assistance</text>
 							<statusCode code="completed"/>
@@ -805,7 +833,7 @@
 						<act classCode="ACT" moodCode="INT">
 							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
-							<id extension="892a84b7-d982-4615-882d-40ba89234167"/>
+							<id root="892a84b7-d982-4615-882d-40ba89234167"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>CM will obtain a history of the member's troubling behaviors to include: the onset, duration and severity of the behaviors; the member's perception of the behaviors and the precipitating factors; the identified measures that have been found to mitigate the troubling behaviors.</text>
 							<statusCode code="active"/>
@@ -827,7 +855,7 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.131"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.131" extension="2015-08-01"/>
-							<id extension="e7cf8f59-a538-4d73-9a4d-de13e4b270d8"/>
+							<id root="e7cf8f59-a538-4d73-9a4d-de13e4b270d8"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>CM will obtain a history of the member's comorbidities, including new physical or behavioral health problems, or a flare-up of a known chronic condition that may be causing or aggravating a behavior symptom.</text>
 							<statusCode code="completed"/>
@@ -849,7 +877,7 @@
 						<act classCode="ACT" moodCode="INT">
 							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
-							<id extension="1ce9d9c6-3fd0-466c-bae5-4c5f11f587c7"/>
+							<id root="1ce9d9c6-3fd0-466c-bae5-4c5f11f587c7"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>CM will preform a medication reconciliation.</text>
 							<statusCode code="active"/>
@@ -871,7 +899,7 @@
 						<act classCode="ACT" moodCode="INT">
 							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
-							<id extension="dd13c03b-80a0-4ef7-81a5-6930c7d62735"/>
+							<id root="dd13c03b-80a0-4ef7-81a5-6930c7d62735"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>CM/ICT/Waiver Service Coordinator will complete Face to Face visits with the Medium Risk member, per the following schedule: For months 0-2 there will be 1 visit. For months 3-6 there will be at least 2 visits with a maximum of 60 days between visits. For month 7 until the conclusion of the Demonstration, there will be at least 1 visit every 3 months, with a maximum of 90 days between visits. CM/ICT/Waiver Service Coordinator will make Monthly Telephonic Contact with the member from month 7 until the conclusion of the Demonstration and will also make Telephonic Contact as needed from month 0 until the conclusion of the Demonstration.</text>
 							<statusCode code="active"/>
@@ -893,7 +921,7 @@
 						<act classCode="ACT" moodCode="INT">
 							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
-							<id extension="d81f4960-fecf-4c1e-a854-68c8b8ccd307"/>
+							<id root="d81f4960-fecf-4c1e-a854-68c8b8ccd307"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>CM will assess the member/family/caregiver to identify functional declines that are related to a recent, acute, event or condition.</text>
 							<statusCode code="active"/>
@@ -915,7 +943,7 @@
 						<act classCode="ACT" moodCode="INT">
 							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
-							<id extension="66342a2d-ca54-4b7b-a11b-58733983af46"/>
+							<id root="66342a2d-ca54-4b7b-a11b-58733983af46"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>CM will link the member with healthcare providers for the evaluation and treatment of medical problems and associated functional decline.</text>
 							<statusCode code="active"/>
@@ -937,7 +965,7 @@
 						<act classCode="ACT" moodCode="INT">
 							<templateId root="2.16.840.1.113883.10.20.22.4.146"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.146" extension="2015-08-01"/>
-							<id extension="68f3edd0-38ed-4152-8e02-c7072aa9935b"/>
+							<id root="68f3edd0-38ed-4152-8e02-c7072aa9935b"/>
 							<code code="362956003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervention"/>
 							<text>CM will educate the member/family/caregiver on care interventions to reduce functional loss, increase ADL self-performance and return the member to his/her previous functional level.</text>
 							<statusCode code="active"/>
