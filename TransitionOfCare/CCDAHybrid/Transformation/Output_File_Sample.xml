@@ -8,12 +8,12 @@
 	<id root="fbb533a3-df25-48b2-8d97-3e7d40d8bf6a"/>
 	<code code="52521-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Overall Plan of Care/Advance Care Directives"/>
 	<title>Care Plan</title>
-	<effectiveTime value="20170324142715-0400"/>
+	<effectiveTime value="20170327134254-0400"/>
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
 	<languageCode code="en-US"/>
 	<recordTarget>
 		<patientRole>
-			<id root="~~ Georgia Medcaid OID HERE ~~" extension="999999999999"/>
+			<id root="2.16.840.1.113883.3.7290" extension="999999999999"/>
 			<addr use="WP">
 				<state>Ohio</state>
 				<city>Cityville</city>
@@ -37,7 +37,7 @@
 		</patientRole>
 	</recordTarget>
 	<author>
-		<time value="20170324142715-0400"/>
+		<time value="20170327134254-0400"/>
 		<assignedAuthor>
 			<id nullFlavor="UNK"/>
 			<addr>
@@ -71,7 +71,7 @@
 	<documentationOf>
 		<serviceEvent classCode="PCPR">
 			<effectiveTime>
-				<low value="20170324142715-0400"/>
+				<low value="20170327134254-0400"/>
 			</effectiveTime>
 			<performer typeCode="PRF">
 				<assignedEntity>
@@ -146,7 +146,7 @@
 								</tr>
 							</tbody>
 						</table>
-						<!--Internal Transition of Care v3 Contents-->
+						<!--Internal Transition of Care Contents-->
 					</text>
 				</section>
 			</component>
@@ -557,7 +557,7 @@
 							<value xsi:type="TN">Member/caregiver knowledgeable in health maintenance and prevention strategies</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170324142715-0400"/>
+								<time value="20170327134254-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -593,7 +593,7 @@
 							<value xsi:type="TN">Identify and Eliminate underlying conditions or stressors that contribute to behavioral problems.</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170324142715-0400"/>
+								<time value="20170327134254-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -645,7 +645,7 @@
 							<value xsi:type="TN">Member with Medium Medical, Behavioral, Social and/or Long Term Service and Support Needs will have ongoing Care Management Contact and Visits</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170324142715-0400"/>
+								<time value="20170327134254-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>
@@ -681,7 +681,7 @@
 							<value xsi:type="TN">Member will reverse functional loss resulting from a recent, acute, event or condition.</value>
 							<author>
 								<templateId root="2.16.840.1.113883.10.20.22.4.119"/>
-								<time value="20170324142715-0400"/>
+								<time value="20170327134254-0400"/>
 								<assignedAuthor>
 									<id nullFlavor="UNK"/>
 								</assignedAuthor>

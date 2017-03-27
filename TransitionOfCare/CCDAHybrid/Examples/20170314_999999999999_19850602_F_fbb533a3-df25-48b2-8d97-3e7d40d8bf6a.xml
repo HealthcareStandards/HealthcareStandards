@@ -12,7 +12,7 @@
 	<languageCode code="en-US"/>
 	<recordTarget>
 		<patientRole>
-			<id root="~~ Georgia Medcaid OID HERE ~~" extension="999999999999"/>
+			<id root="2.16.840.1.113883.3.7290" extension="999999999999"/>
 			<addr use="WP">
 				<state>Ohio</state>
 				<city>Cityville</city>

@@ -50,7 +50,7 @@
 				<recordTarget>
 					<patientRole>
 						<id>
-							<xsl:attribute name="root" namespace="" select="'~~ Georgia Medcaid OID HERE ~~'"/>
+							<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.3.7290'"/>
 							<xsl:attribute name="extension" namespace="" select="fn:string($var2_Patient/*:MedicaidId[fn:namespace-uri() eq ''])"/>
 						</id>
 						<addr>
@@ -227,8 +227,8 @@
 				</documentationOf>
 				<xsl:for-each select="*:CaseManagement[fn:namespace-uri() eq '']">
 					<xsl:variable name="var49_PharmacyLockIn" as="node()?" select="$var52_cur/*:PharmacyLockIn[fn:namespace-uri() eq '']"/>
-					<xsl:variable name="var47_CarePlan" as="node()" select="*:CarePlan[fn:namespace-uri() eq '']"/>
-					<xsl:variable name="var48_CaseManager" as="node()" select="*:CaseManager[fn:namespace-uri() eq '']"/>
+					<xsl:variable name="var47_CaseManager" as="node()" select="*:CaseManager[fn:namespace-uri() eq '']"/>
+					<xsl:variable name="var48_CarePlan" as="node()" select="*:CarePlan[fn:namespace-uri() eq '']"/>
 					<component>
 						<structuredBody>
 							<component>
@@ -310,7 +310,7 @@
 														</td>
 													</xsl:for-each>
 												</tr>
-												<xsl:variable name="var21_CaseManager" as="node()" select="$var48_CaseManager"/>
+												<xsl:variable name="var21_CaseManager" as="node()" select="$var47_CaseManager"/>
 												<xsl:variable name="var20_FirstName" as="node()" select="$var21_CaseManager/*:FirstName[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Case Manager Name</td>
@@ -318,7 +318,7 @@
 														<xsl:sequence select="fn:concat(fn:concat(fn:string($var20_FirstName), ' '), fn:string($var21_CaseManager/*:LastName[fn:namespace-uri() eq '']))"/>
 													</td>
 												</tr>
-												<xsl:variable name="var25_CaseManager" as="node()" select="$var48_CaseManager"/>
+												<xsl:variable name="var25_CaseManager" as="node()" select="$var47_CaseManager"/>
 												<xsl:variable name="var24_Phone" as="node()" select="$var25_CaseManager/*:Phone[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Case Manager Phone</td>
@@ -401,11 +401,11 @@
 												</xsl:for-each>
 											</tbody>
 										</table>
-										<xsl:comment select="'Internal Transition of Care v3 Contents'"/>
+										<xsl:comment select="'Internal Transition of Care Contents'"/>
 									</text>
 								</section>
 							</component>
-							<xsl:variable name="var36_CarePlan" as="node()" select="$var47_CarePlan"/>
+							<xsl:variable name="var36_CarePlan" as="node()" select="$var48_CarePlan"/>
 							<xsl:variable name="var35_Problem" as="node()+" select="$var36_CarePlan/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']"/>
 							<component>
 								<section>
@@ -708,7 +708,7 @@
 									</xsl:for-each>
 								</section>
 							</component>
-							<xsl:variable name="var40_CarePlan" as="node()" select="$var47_CarePlan"/>
+							<xsl:variable name="var40_CarePlan" as="node()" select="$var48_CarePlan"/>
 							<xsl:variable name="var39_Problem" as="node()+" select="$var40_CarePlan/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']"/>
 							<component>
 								<section>
@@ -850,7 +850,7 @@
 									</xsl:for-each>
 								</section>
 							</component>
-							<xsl:variable name="var46_CarePlan" as="node()" select="$var47_CarePlan"/>
+							<xsl:variable name="var46_CarePlan" as="node()" select="$var48_CarePlan"/>
 							<xsl:variable name="var45_Problem" as="node()+" select="$var46_CarePlan/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']"/>
 							<component>
 								<section>
