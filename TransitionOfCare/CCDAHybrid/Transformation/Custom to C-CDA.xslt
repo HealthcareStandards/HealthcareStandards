@@ -257,7 +257,7 @@
 												<xsl:variable name="var16_ProgramType" as="node()" select="*:ProgramType[fn:namespace-uri() eq '']"/>
 												<xsl:variable name="var15_cur_as_string" as="xs:string" select="fn:string($var16_ProgramType)"/>
 												<tr>
-													<td>Programe Type</td>
+													<td>Program Type</td>
 													<xsl:variable name="var14_test_resultof_equal" as="xs:string?">
 														<xsl:choose>
 															<xsl:when test="($var15_cur_as_string = 'CM')">
@@ -323,15 +323,15 @@
 												<tr>
 													<td>Case Manager Phone</td>
 													<xsl:for-each select="($var25_CaseManager/*:PhoneExtension[fn:namespace-uri() eq ''])[fn:not((fn:translate(fn:string(@xsi:nil), 'true ', '1') = '1'))]">
-														<xsl:variable name="var22_cur_as_string" as="xs:string" select="fn:string($var24_Phone)"/>
-														<xsl:variable name="var23_cur_as_string" as="xs:string" select="fn:string(.)"/>
+														<xsl:variable name="var22_cur_as_string" as="xs:string" select="fn:string(.)"/>
+														<xsl:variable name="var23_cur_as_string" as="xs:string" select="fn:string($var24_Phone)"/>
 														<td>
 															<xsl:choose>
-																<xsl:when test="($var23_cur_as_string = '')">
-																	<xsl:sequence select="$var22_cur_as_string"/>
+																<xsl:when test="($var22_cur_as_string = '')">
+																	<xsl:sequence select="$var23_cur_as_string"/>
 																</xsl:when>
 																<xsl:otherwise>
-																	<xsl:sequence select="fn:concat(fn:concat($var22_cur_as_string, ' '), $var23_cur_as_string)"/>
+																	<xsl:sequence select="fn:concat(fn:concat($var23_cur_as_string, ' '), $var22_cur_as_string)"/>
 																</xsl:otherwise>
 															</xsl:choose>
 														</td>
@@ -401,7 +401,7 @@
 												</xsl:for-each>
 											</tbody>
 										</table>
-										<xsl:comment select="'Internal Transition of Care Contents'"/>
+										<xsl:comment select="'**IMPORTANT** Internal Transition of Care Contents'"/>
 									</text>
 								</section>
 							</component>
@@ -541,11 +541,11 @@
 										</table>
 									</text>
 									<xsl:for-each select="$var35_Problem">
-										<xsl:variable name="var33_let" as="node()+">
+										<xsl:variable name="var33_Guid_as_string" as="xs:string" select="fn:string(@Guid)"/>
+										<xsl:variable name="var34_let" as="node()+">
 											<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.4'"/>
 											<xsl:attribute name="extension" namespace="" select="'2015-08-01'"/>
 										</xsl:variable>
-										<xsl:variable name="var34_Guid_as_string" as="xs:string" select="fn:string(@Guid)"/>
 										<xsl:variable name="var32_let" as="node()+">
 											<xsl:attribute name="code" namespace="" select="'55607006'"/>
 											<xsl:attribute name="codeSystem" namespace="" select="'2.16.840.1.113883.3.88.12.3221.7.2'"/>
@@ -570,7 +570,7 @@
 													<xsl:attribute name="extension" namespace="" select="'2015-08-01'"/>
 												</templateId>
 												<id>
-													<xsl:attribute name="root" namespace="" select="$var34_Guid_as_string"/>
+													<xsl:attribute name="root" namespace="" select="$var33_Guid_as_string"/>
 												</id>
 												<code>
 													<xsl:attribute name="code" namespace="" select="'75310-3'"/>
@@ -590,10 +590,10 @@
 															<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.4'"/>
 														</templateId>
 														<templateId>
-															<xsl:sequence select="$var33_let"/>
+															<xsl:sequence select="$var34_let"/>
 														</templateId>
 														<id>
-															<xsl:attribute name="extension" namespace="" select="$var34_Guid_as_string"/>
+															<xsl:attribute name="extension" namespace="" select="$var33_Guid_as_string"/>
 														</id>
 														<code>
 															<xsl:sequence select="$var32_let"/>
@@ -643,7 +643,7 @@
 																		<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.4'"/>
 																	</templateId>
 																	<templateId>
-																		<xsl:sequence select="$var33_let"/>
+																		<xsl:sequence select="$var34_let"/>
 																	</templateId>
 																	<id>
 																		<xsl:attribute name="extension" namespace="" select="fn:string(@Guid)"/>
