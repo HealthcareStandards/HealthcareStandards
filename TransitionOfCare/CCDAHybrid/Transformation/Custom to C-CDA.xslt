@@ -5,10 +5,10 @@
 		<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc">
 			<xsl:attribute name="xsi:schemaLocation" select="'urn:hl7-org:v3 CDA_SDTC.xsd'"/>
 			<xsl:for-each select="*:TransitionOfCare[fn:namespace-uri() eq '']">
-				<xsl:variable name="var44_CaseManagement" as="node()?" select="*:CaseManagement[fn:namespace-uri() eq '']"/>
-				<xsl:variable name="var45_resultof_replace" as="xs:string" select="replace(format-dateTime(fn:current-dateTime(), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
-				<xsl:variable name="var46_PharmacyLockIn" as="node()?" select="*:PharmacyLockIn[fn:namespace-uri() eq '']"/>
-				<xsl:variable name="var43_Author" as="node()" select="*:Author[fn:namespace-uri() eq '']"/>
+				<xsl:variable name="var47_PharmacyLockIn" as="node()?" select="*:PharmacyLockIn[fn:namespace-uri() eq '']"/>
+				<xsl:variable name="var48_resultof_replace" as="xs:string" select="replace(format-dateTime(fn:current-dateTime(), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
+				<xsl:variable name="var49_CaseManagement" as="node()?" select="*:CaseManagement[fn:namespace-uri() eq '']"/>
+				<xsl:variable name="var46_Author" as="node()" select="*:Author[fn:namespace-uri() eq '']"/>
 				<realmCode>
 					<xsl:attribute name="code" namespace="" select="'US'"/>
 				</realmCode>
@@ -36,7 +36,7 @@
 				</code>
 				<title>Care Plan</title>
 				<effectiveTime>
-					<xsl:attribute name="value" namespace="" select="$var45_resultof_replace"/>
+					<xsl:attribute name="value" namespace="" select="$var48_resultof_replace"/>
 				</effectiveTime>
 				<confidentialityCode>
 					<xsl:attribute name="code" namespace="" select="'N'"/>
@@ -104,12 +104,12 @@
 						</patient>
 					</patientRole>
 				</recordTarget>
-				<xsl:variable name="var8_Author" as="node()" select="$var43_Author"/>
+				<xsl:variable name="var8_Author" as="node()" select="$var46_Author"/>
 				<xsl:variable name="var7_Address" as="node()" select="$var8_Author/*:Address[fn:namespace-uri() eq '']"/>
 				<xsl:variable name="var6_Name_as_string" as="xs:string" select="fn:string($var8_Author/*:Name[fn:namespace-uri() eq ''])"/>
 				<author>
 					<time>
-						<xsl:attribute name="value" namespace="" select="$var45_resultof_replace"/>
+						<xsl:attribute name="value" namespace="" select="$var48_resultof_replace"/>
 					</time>
 					<assignedAuthor>
 						<id>
@@ -157,7 +157,7 @@
 						</assignedAuthoringDevice>
 					</assignedAuthor>
 				</author>
-				<xsl:variable name="var13_Author" as="node()" select="$var43_Author"/>
+				<xsl:variable name="var13_Author" as="node()" select="$var46_Author"/>
 				<xsl:variable name="var12_Address" as="node()" select="$var13_Author/*:Address[fn:namespace-uri() eq '']"/>
 				<custodian>
 					<assignedCustodian>
@@ -208,7 +208,7 @@
 						<xsl:attribute name="classCode" namespace="" select="'PCPR'"/>
 						<effectiveTime>
 							<low>
-								<xsl:attribute name="value" namespace="" select="$var45_resultof_replace"/>
+								<xsl:attribute name="value" namespace="" select="$var48_resultof_replace"/>
 							</low>
 						</effectiveTime>
 						<performer>
@@ -251,7 +251,16 @@
 											</tr>
 										</thead>
 										<tbody>
-											<xsl:for-each select="$var44_CaseManagement">
+											<xsl:for-each select="$var2_Patient">
+												<xsl:variable name="var100_Phone" as="node()" select="*:Phone[fn:namespace-uri() eq '']"/>
+												<tr>
+													<td>Patient Phone Number</td>
+													<td>
+														<xsl:sequence select="fn:string($var100_Phone)"/>
+													</td>
+												</tr>
+											</xsl:for-each>
+											<xsl:for-each select="$var49_CaseManagement">
 												<xsl:variable name="var16_ProgramType" as="node()" select="*:ProgramType[fn:namespace-uri() eq '']"/>
 												<xsl:variable name="var15_cur_as_string" as="xs:string" select="fn:string($var16_ProgramType)"/>
 												<tr>
@@ -275,7 +284,7 @@
 													</xsl:for-each>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var44_CaseManagement">
+											<xsl:for-each select="$var49_CaseManagement">
 												<xsl:variable name="var19_Program" as="node()" select="*:Program[fn:namespace-uri() eq '']"/>
 												<xsl:variable name="var18_cur_as_string" as="xs:string" select="fn:string($var19_Program)"/>
 												<tr>
@@ -311,7 +320,7 @@
 													</xsl:for-each>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var44_CaseManagement">
+											<xsl:for-each select="$var49_CaseManagement">
 												<xsl:variable name="var21_CaseManager" as="node()" select="*:CaseManager[fn:namespace-uri() eq '']"/>
 												<xsl:variable name="var20_FirstName" as="node()" select="$var21_CaseManager/*:FirstName[fn:namespace-uri() eq '']"/>
 												<tr>
@@ -321,28 +330,21 @@
 													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var44_CaseManagement">
+											<xsl:for-each select="$var49_CaseManagement">
 												<xsl:variable name="var25_CaseManager" as="node()" select="*:CaseManager[fn:namespace-uri() eq '']"/>
 												<xsl:variable name="var24_Phone" as="node()" select="$var25_CaseManager/*:Phone[fn:namespace-uri() eq '']"/>
+												<xsl:variable name="var101_PhoneExtension" as="node()" select="$var25_CaseManager/*:PhoneExtension[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Case Manager Phone</td>
-													<xsl:for-each select="($var25_CaseManager/*:PhoneExtension[fn:namespace-uri() eq ''])[fn:not((fn:translate(fn:string(@xsi:nil), 'true ', '1') = '1'))]">
-														<xsl:variable name="var22_cur_as_string" as="xs:string" select="fn:string(.)"/>
-														<xsl:variable name="var23_cur_as_string" as="xs:string" select="fn:string($var24_Phone)"/>
-														<td>
-															<xsl:choose>
-																<xsl:when test="($var22_cur_as_string = '')">
-																	<xsl:sequence select="$var23_cur_as_string"/>
-																</xsl:when>
-																<xsl:otherwise>
-																	<xsl:sequence select="fn:concat(fn:concat($var23_cur_as_string, ' '), $var22_cur_as_string)"/>
-																</xsl:otherwise>
-															</xsl:choose>
-														</td>
-													</xsl:for-each>
+													<td>
+														<xsl:sequence select="fn:string($var24_Phone)"/>
+														<xsl:if test="/TransitionOfCare/CaseManagement/CaseManager/PhoneExtension">
+															<xsl:sequence select="fn:concat(fn:string($var101_PhoneExtension), ' ')"/>
+														</xsl:if>
+													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var46_PharmacyLockIn">
+											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var26_Name" as="node()" select="*:Pharmacy[fn:namespace-uri() eq '']/*:Name[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Pharmacy Name</td>
@@ -351,7 +353,7 @@
 													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var46_PharmacyLockIn">
+											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var27_NPI" as="node()" select="*:Pharmacy[fn:namespace-uri() eq '']/*:NPI[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Pharmacy NPI</td>
@@ -360,7 +362,7 @@
 													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var46_PharmacyLockIn">
+											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var28_Name" as="node()" select="*:Provider[fn:namespace-uri() eq '']/*:Name[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Pharmacy Provider Name</td>
@@ -369,7 +371,7 @@
 													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var46_PharmacyLockIn">
+											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var29_NPI" as="node()" select="*:Provider[fn:namespace-uri() eq '']/*:NPI[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Pharmacy Provider NPI</td>
@@ -378,7 +380,7 @@
 													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var46_PharmacyLockIn">
+											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var30_StartDate" as="node()" select="*:StartDate[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Pharmacy Lock-In Start Date</td>
@@ -387,7 +389,7 @@
 													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var46_PharmacyLockIn">
+											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var31_EndDate" as="node()" select="*:EndDate[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Pharmacy Lock-In End Date</td>
@@ -429,130 +431,136 @@
 									<xsl:attribute name="displayName" namespace="" select="'Health Concerns'"/>
 								</code>
 								<title>Health Concerns</title>
-								<text>
-									<table>
-										<caption>Problems</caption>
-										<thead>
-											<tr>
-												<th>GUID</th>
-												<th>Description</th>
-												<th>Start Date</th>
-												<th>End Date</th>
-											</tr>
-										</thead>
-										<tbody>
-											<xsl:for-each select="$var44_CaseManagement/*:CarePlan[fn:namespace-uri() eq '']/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']">
+								<xsl:for-each select="$var49_CaseManagement">
+									<xsl:variable name="var33_CarePlan" as="node()" select="*:CarePlan[fn:namespace-uri() eq '']"/>
+									<xsl:variable name="var32_Problem" as="node()+" select="$var33_CarePlan/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']"/>
+									<text>
+										<table>
+											<caption>Problems</caption>
+											<thead>
 												<tr>
-													<td>
-														<xsl:sequence select="fn:string(@Guid)"/>
-													</td>
-													<td>
-														<xsl:sequence select="fn:string(*:Description[fn:namespace-uri() eq ''])"/>
-													</td>
-													<td>
-														<xsl:sequence select="xs:string(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq ''])))"/>
-													</td>
-													<td>
-														<xsl:sequence select="xs:string(xs:date(fn:string(*:EndDate[fn:namespace-uri() eq ''])))"/>
-													</td>
+													<th>GUID</th>
+													<th>Description</th>
+													<th>Start Date</th>
+													<th>End Date</th>
 												</tr>
-											</xsl:for-each>
-										</tbody>
-									</table>
-									<table>
-										<caption>Diagnoses</caption>
-										<thead>
-											<tr>
-												<th>GUID</th>
-												<th>Problem GUID</th>
-												<th>Code</th>
-												<th>Code Type</th>
-												<th>Description</th>
-												<th>Diagnosis Date</th>
-												<th>Primary</th>
-											</tr>
-										</thead>
-										<tbody>
-											<xsl:for-each select="$var44_CaseManagement/*:Conditions[fn:namespace-uri() eq '']/*:Diagnosis[fn:namespace-uri() eq '']">
+											</thead>
+											<tbody>
+												<xsl:for-each select="$var32_Problem">
+													<tr>
+														<td>
+															<xsl:sequence select="fn:string(@Guid)"/>
+														</td>
+														<td>
+															<xsl:sequence select="fn:string(*:Description[fn:namespace-uri() eq ''])"/>
+														</td>
+														<td>
+															<xsl:sequence select="xs:string(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq ''])))"/>
+														</td>
+														<td>
+															<xsl:for-each select="*:EndDate[fn:namespace-uri() eq '']">
+																<xsl:sequence select="xs:string(xs:date(fn:string(.)))"/>
+															</xsl:for-each>
+														</td>
+													</tr>
+												</xsl:for-each>
+											</tbody>
+										</table>
+										<table>
+											<caption>Diagnoses</caption>
+											<thead>
 												<tr>
-													<td>
-														<xsl:sequence select="fn:string(@Guid)"/>
-													</td>
-													<td>(Care Plan Level Diagnosis)</td>
-													<xsl:for-each select="*:Code[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="fn:string(.)"/>
-														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:CodeType[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="fn:string(.)"/>
-														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:Description[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="fn:string(.)"/>
-														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:DiagnosisDate[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="xs:string(xs:date(fn:string(.)))"/>
-														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:Primary[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="xs:string(xs:boolean(fn:string(.)))"/>
-														</td>
-													</xsl:for-each>
+													<th>GUID</th>
+													<th>Problem GUID</th>
+													<th>Code</th>
+													<th>Code Type</th>
+													<th>Description</th>
+													<th>Diagnosis Date</th>
+													<th>Primary</th>
 												</tr>
-											</xsl:for-each>
-											<xsl:for-each select="$var44_CaseManagement/*:CarePlan[fn:namespace-uri() eq '']/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']/*:Conditions[fn:namespace-uri() eq '']/*:Diagnosis[fn:namespace-uri() eq '']">
-												<tr>
-													<td>
-														<xsl:sequence select="fn:string(@Guid)"/>
-													</td>
-													<xsl:for-each select="@ProblemGuid">
+											</thead>
+											<tbody>
+												<xsl:for-each select="*:Conditions[fn:namespace-uri() eq '']/*:Diagnosis[fn:namespace-uri() eq '']">
+													<tr>
 														<td>
-															<xsl:sequence select="fn:string(.)"/>
+															<xsl:sequence select="fn:string(@Guid)"/>
 														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:Code[fn:namespace-uri() eq '']">
+														<td>(Care Plan Level Diagnosis)</td>
+														<xsl:for-each select="*:Code[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="fn:string(.)"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:CodeType[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="fn:string(.)"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:Description[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="fn:string(.)"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:DiagnosisDate[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="xs:string(xs:date(fn:string(.)))"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:Primary[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="xs:string(xs:boolean(fn:string(.)))"/>
+															</td>
+														</xsl:for-each>
+													</tr>
+												</xsl:for-each>
+												<xsl:for-each select="$var32_Problem/*:Conditions[fn:namespace-uri() eq '']/*:Diagnosis[fn:namespace-uri() eq '']">
+													<tr>
 														<td>
-															<xsl:sequence select="fn:string(.)"/>
+															<xsl:sequence select="fn:string(@Guid)"/>
 														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:CodeType[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="fn:string(.)"/>
-														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:Description[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="fn:string(.)"/>
-														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:DiagnosisDate[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="xs:string(xs:date(fn:string(.)))"/>
-														</td>
-													</xsl:for-each>
-													<xsl:for-each select="*:Primary[fn:namespace-uri() eq '']">
-														<td>
-															<xsl:sequence select="xs:string(xs:boolean(fn:string(.)))"/>
-														</td>
-													</xsl:for-each>
-												</tr>
-											</xsl:for-each>
-										</tbody>
-									</table>
-								</text>
-								<xsl:for-each select="$var44_CaseManagement/*:CarePlan[fn:namespace-uri() eq '']/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']">
-									<xsl:variable name="var33_Guid_as_string" as="xs:string" select="fn:string(@Guid)"/>
-									<xsl:variable name="var34_let" as="node()+">
+														<xsl:for-each select="@ProblemGuid">
+															<td>
+																<xsl:sequence select="fn:string(.)"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:Code[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="fn:string(.)"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:CodeType[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="fn:string(.)"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:Description[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="fn:string(.)"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:DiagnosisDate[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="xs:string(xs:date(fn:string(.)))"/>
+															</td>
+														</xsl:for-each>
+														<xsl:for-each select="*:Primary[fn:namespace-uri() eq '']">
+															<td>
+																<xsl:sequence select="xs:string(xs:boolean(fn:string(.)))"/>
+															</td>
+														</xsl:for-each>
+													</tr>
+												</xsl:for-each>
+											</tbody>
+										</table>
+									</text>
+								</xsl:for-each>
+								<xsl:for-each select="$var49_CaseManagement/*:CarePlan[fn:namespace-uri() eq '']/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']">
+									<xsl:variable name="var35_let" as="node()+">
 										<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.4'"/>
 										<xsl:attribute name="extension" namespace="" select="'2015-08-01'"/>
 									</xsl:variable>
-									<xsl:variable name="var32_let" as="node()+">
+									<xsl:variable name="var36_Guid_as_string" as="xs:string" select="fn:string(@Guid)"/>
+									<xsl:variable name="var34_let" as="node()+">
 										<xsl:attribute name="code" namespace="" select="'55607006'"/>
 										<xsl:attribute name="codeSystem" namespace="" select="'2.16.840.1.113883.3.88.12.3221.7.2'"/>
 										<xsl:attribute name="codeSystemName" namespace="" select="'SNOMED CT'"/>
@@ -576,7 +584,7 @@
 												<xsl:attribute name="extension" namespace="" select="'2015-08-01'"/>
 											</templateId>
 											<id>
-												<xsl:attribute name="root" namespace="" select="$var33_Guid_as_string"/>
+												<xsl:attribute name="root" namespace="" select="$var36_Guid_as_string"/>
 											</id>
 											<code>
 												<xsl:attribute name="code" namespace="" select="'75310-3'"/>
@@ -596,13 +604,13 @@
 														<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.4'"/>
 													</templateId>
 													<templateId>
-														<xsl:sequence select="$var34_let"/>
+														<xsl:sequence select="$var35_let"/>
 													</templateId>
 													<id>
-														<xsl:attribute name="extension" namespace="" select="$var33_Guid_as_string"/>
+														<xsl:attribute name="extension" namespace="" select="$var36_Guid_as_string"/>
 													</id>
 													<code>
-														<xsl:sequence select="$var32_let"/>
+														<xsl:sequence select="$var34_let"/>
 													</code>
 													<statusCode>
 														<xsl:attribute name="code" namespace="" select="'completed'"/>
@@ -611,9 +619,11 @@
 														<low>
 															<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq '']))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
 														</low>
-														<high>
-															<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(*:EndDate[fn:namespace-uri() eq '']))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
-														</high>
+														<xsl:for-each select="*:EndDate[fn:namespace-uri() eq '']">
+															<high>
+																<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(.))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
+															</high>
+														</xsl:for-each>
 													</effectiveTime>
 													<value>
 														<xsl:attribute name="xsi:type" select="xs:QName('TN')"/>
@@ -649,13 +659,13 @@
 																	<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.4'"/>
 																</templateId>
 																<templateId>
-																	<xsl:sequence select="$var34_let"/>
+																	<xsl:sequence select="$var35_let"/>
 																</templateId>
 																<id>
 																	<xsl:attribute name="extension" namespace="" select="fn:string(@Guid)"/>
 																</id>
 																<code>
-																	<xsl:sequence select="$var32_let"/>
+																	<xsl:sequence select="$var34_let"/>
 																</code>
 																<statusCode>
 																	<xsl:attribute name="code" namespace="" select="'completed'"/>
@@ -729,45 +739,50 @@
 									<xsl:attribute name="displayName" namespace="" select="'Goals'"/>
 								</code>
 								<title>Goals</title>
-								<text>
-									<table>
-										<thead>
-											<tr>
-												<th>GUID</th>
-												<th>Problem GUID</th>
-												<th>Status</th>
-												<th>Description</th>
-												<th>Start Date</th>
-												<th>End Date</th>
-											</tr>
-										</thead>
-										<tbody>
-											<xsl:for-each select="$var44_CaseManagement/*:CarePlan[fn:namespace-uri() eq '']/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']">
+								<xsl:for-each select="$var49_CaseManagement">
+									<xsl:variable name="var37_CarePlan" as="node()" select="*:CarePlan[fn:namespace-uri() eq '']"/>
+									<text>
+										<table>
+											<thead>
 												<tr>
-													<td>
-														<xsl:sequence select="fn:string(@Guid)"/>
-													</td>
-													<td>
-														<xsl:sequence select="fn:string(@ProblemGuid)"/>
-													</td>
-													<td>
-														<xsl:sequence select="fn:string(*:Status[fn:namespace-uri() eq ''])"/>
-													</td>
-													<td>
-														<xsl:sequence select="fn:string(*:Description[fn:namespace-uri() eq ''])"/>
-													</td>
-													<td>
-														<xsl:sequence select="xs:string(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq ''])))"/>
-													</td>
-													<td>
-														<xsl:sequence select="xs:string(xs:date(fn:string(*:EndDate[fn:namespace-uri() eq ''])))"/>
-													</td>
+													<th>GUID</th>
+													<th>Problem GUID</th>
+													<th>Status</th>
+													<th>Description</th>
+													<th>Start Date</th>
+													<th>End Date</th>
 												</tr>
-											</xsl:for-each>
-										</tbody>
-									</table>
-								</text>
-								<xsl:for-each select="$var44_CaseManagement/*:CarePlan[fn:namespace-uri() eq '']/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']">
+											</thead>
+											<tbody>
+												<xsl:for-each select="$var37_CarePlan/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']">
+													<tr>
+														<td>
+															<xsl:sequence select="fn:string(@Guid)"/>
+														</td>
+														<td>
+															<xsl:sequence select="fn:string(@ProblemGuid)"/>
+														</td>
+														<td>
+															<xsl:sequence select="fn:string(*:Status[fn:namespace-uri() eq ''])"/>
+														</td>
+														<td>
+															<xsl:sequence select="fn:string(*:Description[fn:namespace-uri() eq ''])"/>
+														</td>
+														<td>
+															<xsl:sequence select="xs:string(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq ''])))"/>
+														</td>
+														<td>
+															<xsl:for-each select="*:EndDate[fn:namespace-uri() eq '']">
+																<xsl:sequence select="xs:string(xs:date(fn:string(.)))"/>
+															</xsl:for-each>
+														</td>
+													</tr>
+												</xsl:for-each>
+											</tbody>
+										</table>
+									</text>
+								</xsl:for-each>
+								<xsl:for-each select="$var49_CaseManagement/*:CarePlan[fn:namespace-uri() eq '']/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']">
 									<entry>
 										<observation>
 											<xsl:attribute name="classCode" namespace="" select="'OBS'"/>
@@ -789,9 +804,11 @@
 												<low>
 													<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq '']))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
 												</low>
-												<high>
-													<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(*:EndDate[fn:namespace-uri() eq '']))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
-												</high>
+												<xsl:for-each select="*:EndDate[fn:namespace-uri() eq '']">
+													<high>
+														<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(.))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
+													</high>
+												</xsl:for-each>
 											</effectiveTime>
 											<value>
 												<xsl:attribute name="xsi:type" select="xs:QName('TN')"/>
@@ -802,7 +819,7 @@
 													<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.119'"/>
 												</templateId>
 												<time>
-													<xsl:attribute name="value" namespace="" select="$var45_resultof_replace"/>
+													<xsl:attribute name="value" namespace="" select="$var48_resultof_replace"/>
 												</time>
 												<assignedAuthor>
 													<id>
@@ -810,7 +827,7 @@
 													</id>
 												</assignedAuthor>
 											</author>
-											<xsl:variable name="var35_ProblemGuid" as="node()" select="@ProblemGuid"/>
+											<xsl:variable name="var38_ProblemGuid" as="node()" select="@ProblemGuid"/>
 											<entryRelationship>
 												<xsl:attribute name="typeCode" namespace="" select="'REFR'"/>
 												<act>
@@ -820,7 +837,7 @@
 														<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.122'"/>
 													</templateId>
 													<id>
-														<xsl:attribute name="root" namespace="" select="fn:string($var35_ProblemGuid)"/>
+														<xsl:attribute name="root" namespace="" select="fn:string($var38_ProblemGuid)"/>
 													</id>
 													<code>
 														<xsl:attribute name="nullFlavor" namespace="" select="'NP'"/>
@@ -831,7 +848,7 @@
 												</act>
 											</entryRelationship>
 											<xsl:for-each select="*:Interventions[fn:namespace-uri() eq '']/*:Intervention[fn:namespace-uri() eq '']">
-												<xsl:variable name="var36_Guid" as="node()" select="@Guid"/>
+												<xsl:variable name="var39_Guid" as="node()" select="@Guid"/>
 												<entryRelationship>
 													<xsl:attribute name="typeCode" namespace="" select="'REFR'"/>
 													<act>
@@ -841,7 +858,7 @@
 															<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.122'"/>
 														</templateId>
 														<id>
-															<xsl:attribute name="root" namespace="" select="fn:string($var36_Guid)"/>
+															<xsl:attribute name="root" namespace="" select="fn:string($var39_Guid)"/>
 														</id>
 														<code>
 															<xsl:attribute name="nullFlavor" namespace="" select="'NP'"/>
@@ -857,9 +874,9 @@
 								</xsl:for-each>
 							</section>
 						</component>
-						<xsl:for-each select="$var44_CaseManagement">
-							<xsl:variable name="var42_CarePlan" as="node()" select="*:CarePlan[fn:namespace-uri() eq '']"/>
-							<xsl:variable name="var41_Problem" as="node()+" select="$var42_CarePlan/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']"/>
+						<xsl:for-each select="$var49_CaseManagement">
+							<xsl:variable name="var45_CarePlan" as="node()" select="*:CarePlan[fn:namespace-uri() eq '']"/>
+							<xsl:variable name="var44_Problem" as="node()+" select="$var45_CarePlan/*:Problems[fn:namespace-uri() eq '']/*:Problem[fn:namespace-uri() eq '']"/>
 							<component>
 								<section>
 									<templateId>
@@ -886,7 +903,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<xsl:for-each select="$var41_Problem/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']/*:Interventions[fn:namespace-uri() eq '']/*:Intervention[fn:namespace-uri() eq '']">
+												<xsl:for-each select="$var44_Problem/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']/*:Interventions[fn:namespace-uri() eq '']/*:Intervention[fn:namespace-uri() eq '']">
 													<tr>
 														<td>
 															<xsl:sequence select="fn:string(@Guid)"/>
@@ -904,19 +921,21 @@
 															<xsl:sequence select="xs:string(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq ''])))"/>
 														</td>
 														<td>
-															<xsl:sequence select="xs:string(xs:date(fn:string(*:EndDate[fn:namespace-uri() eq ''])))"/>
+															<xsl:for-each select="*:EndDate[fn:namespace-uri() eq '']">
+																<xsl:sequence select="xs:string(xs:date(fn:string(.)))"/>
+															</xsl:for-each>
 														</td>
 													</tr>
 												</xsl:for-each>
 											</tbody>
 										</table>
 									</text>
-									<xsl:for-each select="$var41_Problem/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']/*:Interventions[fn:namespace-uri() eq '']/*:Intervention[fn:namespace-uri() eq '']">
-										<xsl:variable name="var40_Status_as_string" as="xs:string" select="fn:string(*:Status[fn:namespace-uri() eq ''])"/>
-										<xsl:variable name="var39_resultof_equal" as="xs:boolean" select="($var40_Status_as_string = 'completed')"/>
-										<xsl:variable name="var38_test_equal" as="xs:string">
+									<xsl:for-each select="$var44_Problem/*:Goals[fn:namespace-uri() eq '']/*:Goal[fn:namespace-uri() eq '']/*:Interventions[fn:namespace-uri() eq '']/*:Intervention[fn:namespace-uri() eq '']">
+										<xsl:variable name="var43_Status_as_string" as="xs:string" select="fn:string(*:Status[fn:namespace-uri() eq ''])"/>
+										<xsl:variable name="var42_resultof_equal" as="xs:boolean" select="($var43_Status_as_string = 'completed')"/>
+										<xsl:variable name="var41_test_equal" as="xs:string">
 											<xsl:choose>
-												<xsl:when test="$var39_resultof_equal">
+												<xsl:when test="$var42_resultof_equal">
 													<xsl:sequence select="'2.16.840.1.113883.10.20.22.4.131'"/>
 												</xsl:when>
 												<xsl:otherwise>
@@ -929,7 +948,7 @@
 												<xsl:attribute name="classCode" namespace="" select="'ACT'"/>
 												<xsl:attribute name="moodCode" namespace="">
 													<xsl:choose>
-														<xsl:when test="$var39_resultof_equal">
+														<xsl:when test="$var42_resultof_equal">
 															<xsl:sequence select="'EVN'"/>
 														</xsl:when>
 														<xsl:otherwise>
@@ -938,10 +957,10 @@
 													</xsl:choose>
 												</xsl:attribute>
 												<templateId>
-													<xsl:attribute name="root" namespace="" select="$var38_test_equal"/>
+													<xsl:attribute name="root" namespace="" select="$var41_test_equal"/>
 												</templateId>
 												<templateId>
-													<xsl:attribute name="root" namespace="" select="$var38_test_equal"/>
+													<xsl:attribute name="root" namespace="" select="$var41_test_equal"/>
 													<xsl:attribute name="extension" namespace="" select="'2015-08-01'"/>
 												</templateId>
 												<id>
@@ -957,17 +976,19 @@
 													<xsl:sequence select="fn:string(*:Description[fn:namespace-uri() eq ''])"/>
 												</text>
 												<statusCode>
-													<xsl:attribute name="code" namespace="" select="$var40_Status_as_string"/>
+													<xsl:attribute name="code" namespace="" select="$var43_Status_as_string"/>
 												</statusCode>
 												<effectiveTime>
 													<low>
 														<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(*:StartDate[fn:namespace-uri() eq '']))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
 													</low>
-													<high>
-														<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(*:EndDate[fn:namespace-uri() eq '']))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
-													</high>
+													<xsl:for-each select="*:EndDate[fn:namespace-uri() eq '']">
+														<high>
+															<xsl:attribute name="value" namespace="" select="replace(format-dateTime(xs:dateTime(xs:date(fn:string(.))), '[Y][M01][D01][H01][m01][s01][Z]'), '[A-z,:]', '')"/>
+														</high>
+													</xsl:for-each>
 												</effectiveTime>
-												<xsl:variable name="var37_GoalGuid" as="node()" select="@GoalGuid"/>
+												<xsl:variable name="var40_GoalGuid" as="node()" select="@GoalGuid"/>
 												<entryRelationship>
 													<xsl:attribute name="typeCode" namespace="" select="'RSON'"/>
 													<act>
@@ -977,7 +998,7 @@
 															<xsl:attribute name="root" namespace="" select="'2.16.840.1.113883.10.20.22.4.122'"/>
 														</templateId>
 														<id>
-															<xsl:attribute name="root" namespace="" select="fn:string($var37_GoalGuid)"/>
+															<xsl:attribute name="root" namespace="" select="fn:string($var40_GoalGuid)"/>
 														</id>
 														<code>
 															<xsl:attribute name="nullFlavor" namespace="" select="'NP'"/>
