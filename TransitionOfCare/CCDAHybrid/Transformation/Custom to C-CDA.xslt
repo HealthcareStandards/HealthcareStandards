@@ -464,6 +464,9 @@
 														</td>
 													</tr>
 												</xsl:for-each>
+												<xsl:if test="not(/TransitionOfCare/CaseManagement/CarePlan/Problems)">
+													<tr><td colspan="7">No Problems for Care Plan</td></tr>
+												</xsl:if>
 											</tbody>
 										</table>
 										<table>
@@ -550,6 +553,9 @@
 														</xsl:for-each>
 													</tr>
 												</xsl:for-each>
+												<xsl:if test="not(/TransitionOfCare/CaseManagement/CarePlan/Problems/Problem/Conditions) and not(/TransitionOfCare/CaseManagement/Conditions)">
+													<tr><td colspan="7">No Conditions for Care Plan</td></tr>
+												</xsl:if>
 											</tbody>
 										</table>
 									</text>
@@ -778,6 +784,9 @@
 														</td>
 													</tr>
 												</xsl:for-each>
+												<xsl:if test="not(/TransitionOfCare/CaseManagement/CarePlan/Problems/Problem/Goals/Goal)">
+													<tr><td colspan="6">No Goals for Care Plan</td></tr>
+												</xsl:if>
 											</tbody>
 										</table>
 									</text>
@@ -927,6 +936,9 @@
 														</td>
 													</tr>
 												</xsl:for-each>
+												<xsl:if test="not(/TransitionOfCare/CaseManagement/CarePlan/Problems/Problem/Goals/Goal/Interventions/Intervention)">
+													<tr><td colspan="6">No Interventions for Care Plan</td></tr>
+												</xsl:if>
 											</tbody>
 										</table>
 									</text>
