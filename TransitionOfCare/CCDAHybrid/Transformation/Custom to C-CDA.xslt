@@ -330,20 +330,20 @@
 													</td>
 												</tr>
 											</xsl:for-each>
-											<xsl:for-each select="$var49_CaseManagement">
-												<xsl:variable name="var25_CaseManager" as="node()" select="*:CaseManager[fn:namespace-uri() eq '']"/>
-												<xsl:variable name="var24_Phone" as="node()" select="$var25_CaseManager/*:Phone[fn:namespace-uri() eq '']"/>
-												<xsl:variable name="var101_PhoneExtension" as="node()" select="$var25_CaseManager/*:PhoneExtension[fn:namespace-uri() eq '']"/>
-												<tr>
-													<td>Case Manager Phone</td>
-													<td>
-														<xsl:sequence select="fn:string($var24_Phone)"/>
-														<xsl:if test="/TransitionOfCare/CaseManagement/CaseManager/PhoneExtension">
-															<xsl:sequence select="fn:concat(fn:string($var101_PhoneExtension), ' ')"/>
-														</xsl:if>
-													</td>
-												</tr>
-											</xsl:for-each>
+											<xsl:if test="/TransitionOfCare/CaseManagement/CaseManager/Phone">
+												<xsl:for-each select="$var49_CaseManagement">
+													<xsl:variable name="var25_CaseManager" as="node()" select="*:CaseManager[fn:namespace-uri() eq '']"/>
+													<tr>
+														<td>Case Manager Phone</td>
+														<td>
+															<xsl:sequence select="fn:string($var25_CaseManager/*:Phone[fn:namespace-uri() eq ''])"/>
+															<xsl:if test="/TransitionOfCare/CaseManagement/CaseManager/PhoneExtension">
+																<xsl:sequence select="fn:concat(fn:string($var25_CaseManager/*:PhoneExtension[fn:namespace-uri() eq '']), ' ')"/>
+															</xsl:if>
+														</td>
+													</tr>
+												</xsl:for-each>
+											</xsl:if>
 											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var26_Name" as="node()" select="*:Pharmacy[fn:namespace-uri() eq '']/*:Name[fn:namespace-uri() eq '']"/>
 												<tr>
