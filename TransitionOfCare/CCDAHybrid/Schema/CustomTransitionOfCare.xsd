@@ -42,11 +42,11 @@
 						<xs:documentation source="/ClinicalDocument/recordTarget/patient/name/family"/>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="InteralMemberId" minOccurs="0"/>
+				<xs:element name="InteralMemberId" type="xs:string" minOccurs="0"/>
 				<xs:element name="MedicaidId" type="xs:string">
 					<xs:annotation>
 						<xs:documentation source="/ClinicalDocument/recordTarget/patient/id">
-							@root - TBD need to define OID.
+							@root
 							@extension
 						</xs:documentation>
 					</xs:annotation>
@@ -255,13 +255,6 @@
 	<xs:element name="Goal">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Interventions" minOccurs="0">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="Intervention" maxOccurs="unbounded"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:element ref="Description">
 					<xs:annotation>
 						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/observation/value">
@@ -304,6 +297,13 @@
 						</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				<xs:element name="Interventions" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Intervention" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 			</xs:sequence>
 			<xs:attribute name="Guid" type="xs:string" use="required"/>
 			<xs:attribute name="ProblemGuid" type="xs:string" use="required"/>
@@ -332,7 +332,7 @@
 									<xs:documentation>intervention is NOT completed</xs:documentation>
 								</xs:annotation>
 							</xs:enumeration>
-							<xs:enumeration value="complete">
+							<xs:enumeration value="completed">
 								<xs:annotation>
 									<xs:documentation>intervention is completed</xs:documentation>
 								</xs:annotation>
@@ -449,6 +449,7 @@
 			<xs:sequence>
 				<xs:element ref="Pharmacy"/>
 				<xs:element ref="Provider"/>
+				<xs:element name="Comment" type="xs:string" minOccurs="0"/>
 				<xs:element ref="StartDate"/>
 				<xs:element ref="EndDate"/>
 			</xs:sequence>

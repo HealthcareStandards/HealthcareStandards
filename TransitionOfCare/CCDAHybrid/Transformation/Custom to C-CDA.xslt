@@ -381,6 +381,15 @@
 												</tr>
 											</xsl:for-each>
 											<xsl:for-each select="$var47_PharmacyLockIn">
+												<xsl:variable name="var102_Comment" as="node()" select="*:Comment[fn:namespace-uri() eq '']"/>
+												<tr>
+													<td>Pharmacy Comment</td>
+													<td>
+														<xsl:sequence select="fn:string($var102_Comment)"/>
+													</td>
+												</tr>
+											</xsl:for-each>
+											<xsl:for-each select="$var47_PharmacyLockIn">
 												<xsl:variable name="var30_StartDate" as="node()" select="*:StartDate[fn:namespace-uri() eq '']"/>
 												<tr>
 													<td>Pharmacy Lock-In Start Date</td>
