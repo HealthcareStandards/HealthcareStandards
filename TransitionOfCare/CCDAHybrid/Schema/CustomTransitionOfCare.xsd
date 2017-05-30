@@ -181,7 +181,7 @@
 				<xs:element name="Problems">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="Problem" maxOccurs="unbounded"/>
+							<xs:element ref="Problem" minOccurs="0" maxOccurs="unbounded"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -491,5 +491,13 @@
 		</xs:sequence>
 		<xs:attribute name="Version" type="xs:string"/>
 		<xs:attribute name="Guid" type="xs:string"/>
+		<xs:attribute name="Type">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="N"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:complexType>
 </xs:schema>
