@@ -154,7 +154,7 @@
 							</tbody>
 						</table>
 						<!--<?xml version="1.0" encoding="UTF-8"?>
-<TransitionOfCare Guid="fbb533a3-df25-48b2-8d97-3e7d40d8bf6a" Version="1.0">
+<TransitionOfCare Guid="fbb533a3-df25-48b2-8d97-3e7d40d8bf6a" Version="1.0" Type="F">
     <Author>
         <Name>CareSource</Name>
         <Phone>1-111-111-1111</Phone>
