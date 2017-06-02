@@ -55,7 +55,7 @@
 							<xsl:attribute name="extension" namespace="" select="fn:string($var2_Patient/*:MedicaidId[fn:namespace-uri() eq ''])"/>
 						</id>
 						<addr>
-							<xsl:attribute name="use" namespace="" select="'WP'"/>
+							<xsl:attribute name="use" namespace="" select="'H'"/>
 							<state>
 								<xsl:sequence select="fn:string($var1_Address/*:State[fn:namespace-uri() eq ''])"/>
 							</state>
@@ -251,6 +251,29 @@
 											</tr>
 										</thead>
 										<tbody>
+											<xsl:for-each select="@Type">
+												<td>Transmission Type</td>
+												<td>
+													<xsl:choose>
+														<xsl:when test="(fn:string(.) = 'F')">
+															Final
+														</xsl:when>
+														<xsl:otherwise>
+															<xsl:if test="(fn:string(.) = 'N')">
+																Notification
+															</xsl:if>
+														</xsl:otherwise>
+													</xsl:choose>
+												</td>
+											</xsl:for-each>
+											<xsl:for-each select="*:FosterCare[fn:namespace-uri() eq '']">
+												<tr>
+													<td>Was in Foster Care</td>
+													<td>
+														<xsl:sequence select="xs:string(xs:boolean(fn:string(.)))"/>
+													</td>
+												</tr>
+											</xsl:for-each>
 											<xsl:for-each select="$var2_Patient">
 												<xsl:variable name="var100_Phone" as="node()" select="*:Phone[fn:namespace-uri() eq '']"/>
 												<tr>
@@ -473,8 +496,8 @@
 														</td>
 													</tr>
 												</xsl:for-each>
-												<xsl:if test="not(/TransitionOfCare/CaseManagement/CarePlan/Problems)">
-													<tr><td colspan="7">No Problems for Care Plan</td></tr>
+												<xsl:if test="not(/TransitionOfCare/CaseManagement/CarePlan/Problems/Problem)">
+													<tr><td colspan="4">No Problems for Care Plan</td></tr>
 												</xsl:if>
 											</tbody>
 										</table>
