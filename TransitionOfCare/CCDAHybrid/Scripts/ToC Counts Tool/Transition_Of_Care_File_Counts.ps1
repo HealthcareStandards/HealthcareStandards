@@ -57,7 +57,8 @@ foreach ($file in $files) {
 	$cmo = @{}
 	$cmo.Name = (Select-Xml -Xml $tocDocument -XPath '/TransitionOfCare/Author/Name').ToString()
 	$cmo.MedicaidId = (Select-Xml -Xml $tocDocument -XPath '/TransitionOfCare/Patient/MedicaidId').ToString()
-	$transmissionType = (Select-Xml -Xml $tocDocument -XPath '/TransitionOfCare/@Type').ToString().ToString()
+	$transmissionType = (Select-Xml -Xml $tocDocument -XPath '/TransitionOfCare/@Type').ToString()
+	$programType = $tocDocument.SelectNodes('/TransitionOfCare/CaseManagement/ProgramType').ToString()
 	$problems = $tocDocument.SelectNodes('/TransitionOfCare/CaseManagement/CarePlan/Problems/Problem')
 
 	if ([string]::IsNullOrEmpty($cmo.Name)) {
@@ -76,7 +77,7 @@ foreach ($file in $files) {
 	}
 
 	$cmos[$cmo.Name].MedicaidIds += $cmo.MedicaidId
-	if ($problems.Count -lt 1) {
+	if (-not [string]::IsNullOrEmpty($programType) -and $problems.Count -lt 1) {
 		$cmos[$cmo.Name].BlankToCs += 1
 		$blank = "TRUE"
 	}
