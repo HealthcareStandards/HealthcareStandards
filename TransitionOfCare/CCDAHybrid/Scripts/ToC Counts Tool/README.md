@@ -20,11 +20,11 @@ This tool is used to get different counts based off of ToC transmission files si
 	- Parameter to make the script write all xml validation error to a seperate file location.
 	- This is ignored if you do not use the `validatexml` parameter.
 
-##Term Description
+## Term Description
 
-1. Non-Consent: Case Management element and required elements have been populated but Care Plan HAS NO Problems.
-2. Consent: Case Management element and required elements have been populated but Care Plan HAS Problems.
-3. Case Managed: Case Management element and required elements have been populated.
-4. Pharmacy Lock-In: Pharmacy Lock-In element and required elements have been populated.
-6. Foster Care: Foster Care element elements have been populated.
-5. Empty: No Case Management, Pharmacy Lock-In, or Foster Care elements have been populated.
+1. **Non-Consent:** Case Management element and required elements have been populated but Care Plan HAS NO Problems.
+2. **Consent:** Case Management element and required elements have been populated but Care Plan HAS Problems.
+3. **Case Managed:** Case Management element and required elements have been populated.
+4. **Pharmacy Lock-In:** Pharmacy Lock-In element and required elements have been populated.
+6. **Foster Care:** Foster Care element elements have been populated.
+5. **Empty:** No Case Management, Pharmacy Lock-In, or Foster Care elements have been populated.
