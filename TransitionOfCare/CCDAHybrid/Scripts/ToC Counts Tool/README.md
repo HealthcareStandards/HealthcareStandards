@@ -11,13 +11,13 @@ This tool is used to get different counts based off of ToC transmission files si
 - `logFile`
 	- Parameter allows you to name a path and file name for a text file to hold a copy of the messages sent to the console. By default the script will not create a log file.
 - `validatexml`
-	- Parameter switch that signifies you want to also validate the Transition of Care transmission against a xml schema.
+	- Parameter switch that signifies you want to also validate the Transition of Care transmission against an xml schema.
 	- Requires that you also use the `xmlschemalocation` parameter.
 - `xmlschemalocation`
 	- Parameter for the location of the schema you want to use when validating Transition of Care xml.
 	- This is ignored if you do not use the `validatexml` parameter.
 - `xmlschemalocation`
-	- Parameter to make the script write all xml validation error to a seperate file location.
+	- Parameter to make the script write all xml validation error to a separate file location.
 	- This is ignored if you do not use the `validatexml` parameter.
 
 ## Term Description
