@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 sp2 (x64) (http://www.altova.com) by Alex Daufel (CSMG Headquarters) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="TransitionOfCare">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="TransitionOfCareType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Author">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Author/assignedAuthor/assignedAuthoringDevice/manufacturerModelName"/>
+						<xs:documentation source="/ClinicalDocument/Author/assignedAuthor/assignedAuthoringDevice/softwareName"/>
+						<xs:documentation source="/ClinicalDocument/custodian/assignedCustodian/representedCustodianOrganization/name"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Phone">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Author/assignedAuthor/telecom">@value attribute</xs:documentation>
+						<xs:documentation source="/ClinicalDocument/custodian/assignedCustodian/representedCustodianOrganization/telecom">@value - attribute</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="PhoneExtension" minOccurs="0"/>
+				<xs:element ref="Address"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Patient">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FirstName">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patient/name/given"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="LastName">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patient/name/family"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="InteralMemberId" type="xs:string" minOccurs="0"/>
+				<xs:element name="MedicaidId" type="xs:string">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patient/id">
+							@root
+							@extension
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Gender">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode">
+								@code - attribute
+							</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="F">
+								<xs:annotation>
+									<xs:documentation>Female</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="M">
+								<xs:annotation>
+									<xs:documentation>Male</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="UN">
+								<xs:annotation>
+									<xs:documentation>Male</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="Address"/>
+				<xs:element ref="Phone">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/telecom">@value  - attribute</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DateOfBirth" type="xs:date">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/birthTime">@value - attribute - YYYYMMDDHHMMSS-ZZZZ</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CaseManagement">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProgramType"/>
+				<xs:element ref="Program"/>
+				<xs:element name="CaseManager">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FirstName">
+								<xs:annotation>
+									<xs:documentation/>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="LastName">
+								<xs:annotation>
+									<xs:documentation/>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="Phone">
+								<xs:annotation>
+									<xs:documentation/>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="PhoneExtension" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="CarePlan"/>
+				<xs:element ref="Conditions" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProgramType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="CM">
+					<xs:annotation>
+						<xs:documentation>Case Managed</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="DM">
+					<xs:annotation>
+						<xs:documentation>Disease Managed</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Program">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="BH">
+					<xs:annotation>
+						<xs:documentation>Behavioral Health</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="PH">
+					<xs:annotation>
+						<xs:documentation>Physical Health</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="OB">
+					<xs:annotation>
+						<xs:documentation>Obstretrics</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="AS">
+					<xs:annotation>
+						<xs:documentation>Asthma</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="DB">
+					<xs:annotation>
+						<xs:documentation>Diabeties</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="HT">
+					<xs:annotation>
+						<xs:documentation>Hypertension</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CarePlan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Problems">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Problem" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="ProblemKeyGuid">
+			<xs:selector xpath="Problems/Problem"/>
+			<xs:field xpath="@Guid"/>
+		</xs:key>
+		<xs:key name="DiagnosisKeyGuid">
+			<xs:selector xpath="Problems/Problem/Conditions/Diagnosis"/>
+			<xs:field xpath="@Guid"/>
+		</xs:key>
+		<xs:key name="GoalKeyGuid">
+			<xs:selector xpath="Problems/Problem/Goals/Goal"/>
+			<xs:field xpath="@Guid"/>
+		</xs:key>
+		<xs:key name="InterventionKeyGuid">
+			<xs:selector xpath="Problems/Problem/Goals/Goal/Interventions/Intervention"/>
+			<xs:field xpath="@Guid"/>
+		</xs:key>
+		<xs:keyref name="ProblemDiagnosisRef" refer="DiagnosisKeyGuid">
+			<xs:selector xpath="Problems/Problem/Conditions/Diagnosis"/>
+			<xs:field xpath="@ProblemGuid"/>
+		</xs:keyref>
+		<xs:keyref name="ProblemGoalRef" refer="ProblemKeyGuid">
+			<xs:selector xpath="Problems/Problem/Goals/Goal"/>
+			<xs:field xpath="@ProblemGuid"/>
+		</xs:keyref>
+		<xs:keyref name="GoalRef" refer="GoalKeyGuid">
+			<xs:selector xpath="Problems/Problem/Goals/Goal/Interventions/Intervention"/>
+			<xs:field xpath="@GoalGuid"/>
+		</xs:keyref>
+	</xs:element>
+	<xs:element name="Problem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Description">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/observation/value">
+							Clinical Document > Health Concern Section > Health Concern Act > Problem Observation > Value
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="StartDate">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/observation/effectiveTime/low">
+							Clinical Document > Health Concern Section > Health Concern Act > Problem Observation > Effective Time > Low > @value attribute - YYYYMMDDHHMMSS-ZZZZ
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="EndDate" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/observation/effectiveTime/high">
+							Clinical Document > Health Concern Section > Health Concern Act > Problem Observation > Effective Time > High > @value attribute - YYYYMMDDHHMMSS-ZZZZ
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Goals" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Goal" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="Conditions" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Guid" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Goal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Description">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/observation/value">
+							Clinical Document > Goal Section > Goal Observation > Value
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Status">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/observation/statusCode">
+							Clinical Document > Goal Section > Goal Observation > statusCode > @code attribute
+						</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="active">
+								<xs:annotation>
+									<xs:documentation>goal is NOT completed</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="completed">
+								<xs:annotation>
+									<xs:documentation>goal is completed</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="StartDate">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/observation/effectiveTime/low">
+							Clinical Document > Goal Section > Goal Observation > Effective Time > Low > @value attribute - YYYYMMDDHHMMSS-ZZZZ
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="EndDate" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/observation/effectiveTime/high">
+							Clinical Document > Goal Section > Goal Observation > Effective Time > High > @value attribute - YYYYMMDDHHMMSS-ZZZZ
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Interventions" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Intervention" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Guid" type="xs:string" use="required"/>
+			<xs:attribute name="ProblemGuid" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Intervention">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Description">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/act/text">
+							Clinical Document > Intervention Section > Planned Intervention Act > Intervention Act > Text
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Status">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/act/statusCode ">
+							Clinical Document > Intervention Section > Planned Intervention Act > Intervention Act > Status Code > @code attribute
+						</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="active">
+								<xs:annotation>
+									<xs:documentation>intervention is NOT completed</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="completed">
+								<xs:annotation>
+									<xs:documentation>intervention is completed</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="StartDate">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/act/effectiveTime/low">
+							Clinical Document > Intervention Section > Planned Intervention Act > Intervention Act > Effective Time > Low > @value attribute - YYYYMMDDHHMMSS-ZZZZ
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="EndDate" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/act/effectiveTime/high">
+							Clinical Document > Intervention Section > Planned Intervention Act > Intervention Act > Effective Time > High > @value attribute - YYYYMMDDHHMMSS-ZZZZ
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Guid" type="xs:string" use="required"/>
+			<xs:attribute name="GoalGuid" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Conditions" nillable="true">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Diagnosis" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Diagnosis">
+		<xs:annotation>
+			<xs:documentation>
+				The Diagnosis for a problem should be on the same Health Concern Act as problem (if there is one) for the C-CDA mapping
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Code" type="xs:string">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/encounter/entryRelationship/observation/value/translation">
+							Clinical Document > Health Concern Section > Health Concern Act > Encounter Diagnosis > Problem Observation > Value > Translation > @code attribute
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CodeType">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/encounter/observation/value/translation">
+							Clinical Document > Health Concern Section > Health Concern Act > Encounter Diagnosis > Problem Observation > Value > Translation > @codeSystem attribute
+						</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="ICD9"/>
+							<xs:enumeration value="ICD10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/encounter/observation/value/translation">
+							Clinical Document > Health Concern Section > Health Concern Act > Encounter Diagnosis > Problem Observation > Value > Translation > @displayName attribute
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DiagnosisDate" type="xs:date">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/Component/StructureBody/Component/Section/entry/act/entryRelationship/encounter/observation/effectiveTime/low">
+							Clinical Document > Health Concern Section > Health Concern Act > Problem Observation > Effective Time > Low > @value attribute - YYYYMMDDHHMMSS-ZZZZ
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Primary" type="xs:boolean"/>
+			</xs:sequence>
+			<xs:attribute name="Guid" type="xs:string" use="required"/>
+			<xs:attribute name="ProblemGuid" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddressLine" type="xs:string"/>
+	<xs:element name="City" type="xs:string"/>
+	<xs:element name="State" type="xs:string"/>
+	<xs:element name="ZipCode" type="xs:string"/>
+	<xs:element name="FirstName" type="xs:string"/>
+	<xs:element name="LastName" type="xs:string"/>
+	<xs:element name="Phone" type="xs:string"/>
+	<xs:element name="PhoneExtension" type="xs:string" nillable="true"/>
+	<xs:element name="Description" type="xs:string"/>
+	<xs:element name="StartDate" type="xs:date"/>
+	<xs:element name="EndDate" type="xs:date"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="NPI" type="xs:string"/>
+	<xs:element name="FosterCare" type="xs:boolean"/>
+	<xs:element name="Pharmacy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name"/>
+				<xs:element ref="NPI"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Provider">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name"/>
+				<xs:element ref="NPI"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PharmacyLockIn">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Pharmacy"/>
+				<xs:element ref="Provider"/>
+				<xs:element name="Comment" type="xs:string" minOccurs="0"/>
+				<xs:element ref="StartDate"/>
+				<xs:element ref="EndDate"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Address">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AddressLine">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/streetAddressLine"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="City">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/city"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="State">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/state"/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="ZipCode">
+					<xs:annotation>
+						<xs:documentation source="/ClinicalDocument/recordTarget/patientRole/addr/postalCode"/>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TransitionOfCareType">
+		<xs:sequence>
+			<xs:element ref="Author"/>
+			<xs:element ref="Patient"/>
+			<xs:element ref="CaseManagement" minOccurs="0"/>
+			<xs:element ref="PharmacyLockIn" minOccurs="0"/>
+			<xs:element ref="FosterCare" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Version" type="xs:string"/>
+		<xs:attribute name="Guid" type="xs:string"/>
+		<xs:attribute name="Type">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="N"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>
