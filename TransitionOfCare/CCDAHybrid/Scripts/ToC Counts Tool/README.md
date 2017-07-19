@@ -16,7 +16,7 @@ This tool is used to get different counts based off of ToC transmission files si
 - `xmlschemalocation`
 	- Parameter for the location of the schema you want to use when validating Transition of Care xml.
 	- This is ignored if you do not use the `validatexml` parameter.
-- `xmlschemalocation`
+- `validationlogfile`
 	- Parameter to make the script write all xml validation error to a separate file location.
 	- This is ignored if you do not use the `validatexml` parameter.
 
